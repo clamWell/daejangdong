@@ -147,7 +147,8 @@ $(function(){
 		$("svg").children("path").hide();
 		$("svg").children("text").hide();
 
-		$("#b-01").show();
+	//	$("#b-01").show();
+		
 		$("#b-02").show();
 		$("#b-02-title-01").show();
 		$("#gwangju_1_").show();
@@ -171,6 +172,7 @@ $(function(){
 		$(".svg-holder").addClass("chapter1");
 
 		$(".arrow-prev").hide();
+		$(".arrow-next").hide();
 	};
 
 	var checkChapter = function(stage){
@@ -188,6 +190,9 @@ $(function(){
 		e.preventDefault()
 
 		nowStage = nowStage + 1;
+		if(nowStage>1){
+			$(".arrow-prev").fadeIn();
+		}
 		checkChapter(nowStage);
 		adjustTextBox(nowStage);
 		
@@ -196,6 +201,9 @@ $(function(){
 	$(".arrow-prev").on("click", function(e){
 		e.preventDefault()
 		nowStage = nowStage - 1;
+		if(nowStage<=1){
+			$(".arrow-prev").hide();
+		}
 		checkChapter(nowStage);
 		adjustTextBox(nowStage);
 	});
@@ -218,8 +226,9 @@ $(function(){
 		$(".stage-info .chapter-name").animate({"top":"0px", "opacity":"1"}, 1000, "easeOutCirc");
 		$(".stage-info .year").delay(300).animate({"top":"0px", "opacity":"1"}, 1000, "easeOutCirc");
 		$(".stage-info .stage-title").delay(600).animate({"top":"0px", "opacity":"1"}, 1000, "easeOutCirc", function(){
-			$(".st-1").fadeIn(1000);
+			$(".st-1").fadeIn(500);
 			$(".svg-area").addClass("start");
+			$(".arrow-next").fadeIn();
 		});
 	});
 

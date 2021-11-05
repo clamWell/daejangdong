@@ -273,6 +273,7 @@ padding: 30px;padding-left:100px;padding-right: 50px; }
 .each-stage .story-area {}
 .each-stage .story-area .para {margin: 15px 0; font-weight: 500; font-size: 20px; text-align: left; color: #222; line-height: 1.6; letter-spacing: -0.3px;    word-break: keep-all;  }
 .each-story {   width: 100%;box-sizing: border-box; padding: 30px;  background: rgba(245,245,245, 0.7); /* box-shadow: 5px 5px 25px rgb(0 0 0 / 5%); */}
+.each-stage .story-area .para span.name { }
 
 .arrow-holder{ position: absolute;width: 100%; bottom:0;z-index: 3;} 
 .arrow-prev { position: absolute; bottom:50px; left:50px; }
