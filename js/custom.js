@@ -136,7 +136,8 @@ $(function(){
 	
 	var nowChapter = 1,
 		nowYear = 2009,
-		nowStage = 1;
+		nowStage = 1,
+		nowStageBefore;
 
 	function makeStoryDefault(){
 		var nowChapter = 1,
@@ -147,8 +148,7 @@ $(function(){
 		$("svg").children("path").hide();
 		$("svg").children("text").hide();
 
-	//	$("#b-01").show();
-		
+		$(".svg-holder").addClass("chapter1");
 		$("#b-02").show();
 		$("#b-02-title-01").show();
 		$("#gwangju_1_").show();
@@ -159,17 +159,10 @@ $(function(){
 		$("#p-g1-05").show();
 		$("#p-g1-06").show();
 		$("#p-g1-07").show();
-		$("#p-g1-08").show();
-		$("#p-g1-09").show();
+		//$("#p-g1-08").show();
+		//$("#p-g1-09").show();
 
-	/*	$("#p-g2-01").show();
-		$("#p-g2-02").show();
-		$("#p-g2-04").show();*/
 
-		$("#line01").show();
-		$("#line02").show();
-		$("#line03").show();
-		$(".svg-holder").addClass("chapter1");
 
 		$(".arrow-prev").hide();
 		$(".arrow-next").hide();
@@ -181,40 +174,43 @@ $(function(){
 		}else if(stage>3){
 			nowChapter = 2;
 		} // 추후 추가
-		console.log(nowChapter);
+		console.log("챕터: "+nowChapter);
 		return nowChapter;
 	}
 
 	//다음 
 	$(".arrow-next").on("click", function(e){
 		e.preventDefault()
-
+		nowStageBefore = nowStage;
 		nowStage = nowStage + 1;
 		if(nowStage>1){
 			$(".arrow-prev").fadeIn();
 		}
 		checkChapter(nowStage);
 		adjustTextBox(nowStage);
+		drawStage(nowStage,nowStageBefore);
 		
 	});
 	//이전
 	$(".arrow-prev").on("click", function(e){
 		e.preventDefault()
+		nowStageBefore = nowStage;
 		nowStage = nowStage - 1;
 		if(nowStage<=1){
 			$(".arrow-prev").hide();
 		}
 		checkChapter(nowStage);
 		adjustTextBox(nowStage);
+		drawStage(nowStage,nowStageBefore);
 	});
 	
 	function adjustTextBox(stage){
 		var stage = stage || 1;
 
-		console.log(stage );
+		console.log("스테이지: "+stage);
 		
 		$(".each-story").hide();
-		$(".each-story").eq(stage-1).fadeIn();
+		$(".each-story").eq(stage-1).fadeIn(700);
 
 	};
 
@@ -233,9 +229,58 @@ $(function(){
 	});
 
 	
+	function drawStage(n, n_before){
+		var reverse = (n - n_before>0)? false : true;
+	
+		if(reverse){
+			console.log("이전스토리")
+		}else{
+			console.log("다음스토리")
+		}
 
-	function drawStage(n){
 		switch (n){
+			case 1: //case1은 reverse 케이스 밖에 없음
+				$("#line01").hide();
+				$("#line02").hide();
+				$("#p-g1-08").hide();
+				break;
+			case 2:
+				if(reverse){
+					$("#line03").hide();
+					$("#p-g1-09").hide();
+				}else{
+					$("#line01").show();
+					$("#line02").show();
+					$("#p-g1-08").show();
+				}
+				break;
+			case 3:
+				if(reverse){
+					$("#b-01").hide();
+					$("#p-g2-01").hide();
+					$("#p-g2-02").hide();
+				}else{
+					$("#line03").show();
+					$("#p-g1-09").show();
+				}
+				break;
+			case 4:
+				if(reverse){ // 5>4
+					$("#p-g2-04").hide();
+				}else{ // 3>4
+					$("#b-01").show();
+					$("#p-g2-01").show();
+					$("#p-g2-02").show();
+				}
+				break;
+			case 5:
+				if(reverse){ // 6>5
+			
+				}else{ // 4>5
+					$("#p-g2-04").show();
+				}
+				break;
+				
 			
 		}	
 	}
