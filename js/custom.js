@@ -169,14 +169,24 @@ $(function(){
 	};
 
 	var checkChapter = function(stage){
-		if(stage<=3){
+		if(stage<=5){
 			nowChapter = 1;
-		}else if(stage>3){
+		}else if(stage>5){
 			nowChapter = 2;
-		} // 추후 추가
+		}
+
 		console.log("챕터: "+nowChapter);
-		return nowChapter;
+		changeChapter(nowChapter)
+		//return nowChapter;
 	}
+
+	var chapterYearList = ["2009","2010","2011~2012", "2013","2014","2015","2016~2018","2019~2020","2021"],
+		chapterTitleList = ["태초에 대장동,<br/> 그리고 토건세력이 있었다", "2010년 시의회를 포섭한 꾼들, <br/>공무원을 만났다", "공공개발 > '민관' 공공개발","모두가 힘을 모아 성남도시개발공사 설립","민-관 손을 잡고 거대한 판을 설계하다","불거진 부산저축은행 사건, 선수단 교체","'천군만마' 국회와 법원을 등에 업고, 불타는 부동산 시장을 달리다","돈냄새 맡고 돌아온 친구들, 균열이 시작되다","발각"]
+	var changeChapter= function(ch){
+		$(".chapter-name").html("chapter. "+ch);
+		$(".stage-info .year").html(chapterYearList[ch-1]);
+		$(".stage-info .stage-title").html(chapterTitleList[ch-1]);
+	};
 
 	//다음 
 	$(".arrow-next").on("click", function(e){
