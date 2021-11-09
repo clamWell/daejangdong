@@ -268,15 +268,25 @@ width: 27px; height: 30px;}
 .stage-info { position: relative;text-align: right; margin: 50px 0;}
 .stage-info .chapter-name {font-family: 'Noto Serif KR', 'notokr-regular'; color: #123315; position: relative; top:-20px; opacity:0; }
 .stage-info .year { font-size: 40px; font-weight: bold; font-family: 'Noto Serif KR', 'notokr-regular'; color: #123315;position: relative; top:-20px; opacity:0; }
-.stage-info .stage-title { font-size: 30px; font-family: 'Noto Serif KR', 'notokr-regular'; font-weight: 300;position: relative; top:-20px; opacity:0; }
+.stage-info .stage-title { font-size: 28px; font-family: 'Noto Serif KR', 'notokr-regular'; font-weight: 300;position: relative; top:-20px; opacity:0; }
 .each-stage .story-area {}
 .each-stage .story-area .para {margin: 15px 0; font-weight: 300; font-size: 20px; text-align: left; color: #222; line-height: 1.6; letter-spacing: -0.3px;    word-break: keep-all; font-size:18px; font-weight:500;  }
 .each-story {   width: 100%;box-sizing: border-box; padding: 30px;  background: rgba(245,245,245, 0.7); /* box-shadow: 5px 5px 25px rgb(0 0 0 / 5%); */ max-width:600px; position: relative; }
 .each-story::before { display:block; content: ""; position: absolute; width: 400px; top:20px;right:-400px; height:2px; background: #023f09; }
 
-.each-stage .story-area .para span.name {  background: #fff; box-sizing: border-box; font-weight:bold; padding: 1px 5px;border-radius: 4px;font-size: 18.5px;}
+.each-stage .story-area .para span.name {  background: #fff; box-sizing: border-box; font-weight:bold; padding: 1px 5px;border-radius: 4px;font-size: 17px;}
 .each-stage .story-area .para span.name1 {color: #01570b;}
 .each-stage .story-area .para span.name2 {color: #001486;}
+.each-stage .story-area .para span.name3 {color: #cd2200;}
+.each-stage .story-area .para span.name4 {color: #3e4a90; background: #bccce9;} 
+.each-stage .story-area .para span.name6 {color: #001f1a; background: #98cfba;} 
+.each-stage .story-area .para span.name5 {background: #1c2951; color: #f4eeff; font-weight: normal;}
+.each-stage .story-area .para span.name7 {color: #222; background: #dac776;}
+.each-stage .story-area .para span.name8 {color: #fff; background: #222;font-weight: normal;}
+.each-stage .story-area .para span.name9 {background: #bbbadd;color: #05025a;}
+.each-stage .story-area .para span.name10 {background: #dac776; color: #222;}
+.each-stage .story-area .para span.name11 {background: #66c6e4; }
+
 
 .arrow-holder{ position: absolute;width: 100%; bottom:0;z-index: 3;}
 .arrow-prev { position: absolute; bottom:50px; left:50px; }
@@ -294,31 +304,33 @@ width: 27px; height: 30px;}
 svg text { font-family: 'Noto Sans KR' !important;  font-weight: 400;}
 svg { transition:all 1s ease 0s; /* transform: scale(1.5); transform-origin: top center;  */}
 
-.svg-holder.chapter1 svg { transform: scale(1.3);transform-origin: top left;}
+.svg-holder.chapter1 svg { transform: scale(1.3) translate(0px,10px);}
 svg g { transition:all 0.5s ease 0s;}
 .each-story { display:none; }
 
 
 /****svg inline style ******/
-.st0{fill:#D9E8E8; fill: #98cfba;}
+.st0{fill:#D9E8E8; fill: #fff;}
 .st1{fill:#0E1D11;}
 .st2{fill:#1C1D1D;}
 .st3{font-family:'SDTviceket-KSCpc-EUC-H';}
 .st4{font-size:20px;}
-.st5{fill:#BADCE5;}
+.st5{fill: #c7e8dd;}
 .st6{fill:#A5A5A5;}
 .st7{font-size:11.6198px;}
 .st8{fill:#007E68;}
-.st9{fill:#E3D0E5;}
-.st10{fill:#E9E0EF;}
+.st9{fill:#fff; }
+.st10{fill:#fff;}
 .st11{font-size:15.9471px;}
-.st12{fill:#66C6E4;}
+.st12{fill:#3e4a90;stroke: #8f9ce5;}
 .st13{fill:#07253F;}
 .st14{font-family:'SDGretaSans08Bold-KSCpc-EUC-H';}
 .st15{font-size:15px;}
-.st16{fill:none;stroke:#66C6E4;stroke-width:1.041;stroke-miterlimit:10;}
-.st17{fill:none;stroke:#66C6E4;stroke-width:1.041;stroke-miterlimit:10;stroke-dasharray:3.0657,3.0657;}
-.st18{fill:none;stroke:#66C6E4;stroke-width:1.041;stroke-miterlimit:10;stroke-dasharray:2.4814,2.4814;}
+
+.st16{fill:none;stroke:#3e4a90; stroke-width:2;stroke-miterlimit:10;}
+.st17{fill:none;stroke:#3e4a90; stroke-width:2;stroke-miterlimit:10;stroke-dasharray:3;}
+.st18{fill:none;stroke:#3e4a90; stroke-width:2;stroke-miterlimit:10;stroke-dasharray:3;}
+
 .st19{fill:none;stroke:#66C6E4;stroke-width:1.041;stroke-miterlimit:10;stroke-dasharray:2.2959,2.2959;}
 .st20{fill:none;stroke:#66C6E4;stroke-width:1.0604;stroke-miterlimit:10;}
 .st21{fill:none;stroke:#66C6E4;stroke-width:1.0604;stroke-miterlimit:10;stroke-dasharray:3.0679,3.0679;}
@@ -328,7 +340,7 @@ svg g { transition:all 0.5s ease 0s;}
 .st25{fill:none;stroke:#66C6E4;stroke-width:1.0695;stroke-miterlimit:10;stroke-dasharray:2.9749,2.9749;}
 .st26{fill:none;stroke:#66C6E4;stroke-width:1.0695;stroke-miterlimit:10;stroke-dasharray:2.8258,2.8258;}
 .st27{fill:none;stroke:#66C6E4;stroke-width:1.0695;stroke-miterlimit:10;stroke-dasharray:2.7763,2.7763;}
-.st28{fill:none;stroke:#66C6E4;stroke-width:3;stroke-miterlimit:10;}
+.st28{fill:none;stroke: #3e4a90;stroke-width:3;stroke-miterlimit:10;}
 .st29{fill:none;stroke:#273429;stroke-width:1.0401;stroke-miterlimit:10;}
 .st30{fill:none;stroke:#273429;stroke-width:1.0401;stroke-miterlimit:10;stroke-dasharray:2.0106,2.0106;}
 .st31{fill:none;stroke:#273429;stroke-width:1.0401;stroke-miterlimit:10;stroke-dasharray:2.247,2.247;}
@@ -341,13 +353,13 @@ svg g { transition:all 0.5s ease 0s;}
 .st38{fill:none;stroke:#0E0E0E;stroke-miterlimit:10;}
 .st39{fill:#3C3D3D;}
 .st40{font-family:'SDGretaSans07SemiBold-KSCpc-EUC-H';}
-.st41{font-size:11px;}
+.st41{font-size:11px; font-weight: bold;}
 .st42{fill:none;stroke:#304B30;stroke-miterlimit:10;stroke-dasharray:1.848;}
 .st43{fill:none;stroke:#304B30;stroke-width:0.9399;stroke-miterlimit:10;stroke-dasharray:2.0922;}
-.st44{fill:#E04729;}
+.st44{fill:#E04729;font-weight: bold;}
 .st45{font-size:13px;}
 .st46{fill:none;stroke:#E04729;stroke-width:2;stroke-miterlimit:10;}
-.st47{fill:#304B30;}
+.st47{fill:#304B30; font-weight: bold;}
 .st48{font-size:14.8711px;}
 .st49{fill:none;stroke:#304B30;stroke-width:2.5542;stroke-miterlimit:10;}
 .st50{fill:none;stroke:#66C6E4;stroke-width:2;stroke-miterlimit:10;}
@@ -356,7 +368,7 @@ svg g { transition:all 0.5s ease 0s;}
 .st53{fill:none;stroke:#7C7B7C;stroke-miterlimit:10;stroke-dasharray:3.9869,3.9869;}
 .st54{font-size:12px;}
 .st55{fill:none;stroke:#304B30;stroke-width:2;stroke-miterlimit:10;}
-.st56{fill:#FFFEF8;}
+.st56{fill:#FFFEF8;stroke: #111;}
 .st57{fill:#101010;}
 .st58{font-size:12.2208px;}
 .st59{display:none;}
@@ -373,21 +385,21 @@ svg g { transition:all 0.5s ease 0s;}
 .st70{font-size:17.8727px;}
 .st71{font-size:16.0563px;}
 .st72{fill:none;stroke:#BDBDCA;stroke-width:0.91;stroke-miterlimit:10;stroke-dasharray:1.7462;}
-.st73{fill:#7F7DBA;}
+.st73{fill:#7F7DBA;  fill: #3e4a90; font-weight: bold;  font-size: 15px;}
 .st74{fill:none;stroke:#7F7DBA;stroke-width:1.1013;stroke-miterlimit:10;stroke-dasharray:2.0044;}
 .st75{opacity:0.6;}
 .st76{fill:none;stroke:#BDBDCA;stroke-width:2;stroke-miterlimit:10;}
 .st77{fill:none;stroke:#1D2B58;stroke-miterlimit:10;}
-.st78{fill:#1298BA;}
+.st78{fill:#3e4a90; font-weight:bold;}
 .st79{fill:none;stroke:#304B30;stroke-width:0.9856;stroke-miterlimit:10;stroke-dasharray:1.7939;}
 .st80{fill:none;stroke:#304B30;stroke-width:0.991;stroke-miterlimit:10;stroke-dasharray:1.8036;}
 .st81{fill:#FFFFFF;}
 .st82{fill:none;stroke:#3E4A90;stroke-width:2;stroke-miterlimit:10;}
 .st83{fill:#FFFFFF;stroke:#222222;stroke-width:1.1885;stroke-miterlimit:10;}
 .st84{fill:#222222;}
-.st85{font-size:15.0044px;}
+.st85{font-size:15px;}
 .st86{fill:#80B9AB;}
-.st87{font-size:10px;}
+.st87{font-size:11px; font-weight:bold;}
 .st88{fill:#DAC776;}
 .st89{font-size:16px;}
 .st90{fill:none;stroke:#3E4A90;stroke-miterlimit:10;stroke-dasharray:4;}
@@ -403,7 +415,7 @@ svg g { transition:all 0.5s ease 0s;}
 .st100{fill:none;stroke:#BDBDCA;stroke-miterlimit:10;}
 .st101{fill:#1F2020;font-weight: bold;}
 .st102{fill:#FFFFFF;stroke:#E8371E;stroke-miterlimit:10;}
-.st103{fill:#004F71;}
+.st103{fill:#004F71; fill:#3c0a00;}
 .st104{font-size:19.4981px;}
 .st105{font-size:13.3992px;}
 .st106{font-size:9.6331px;}
@@ -419,9 +431,9 @@ svg g { transition:all 0.5s ease 0s;}
 .st116{fill:none;stroke:#80B9AB;stroke-miterlimit:10;stroke-dasharray:4;}
 .st117{fill:#1C2951;}
 .st118{fill:none;stroke:#3E4A90;stroke-miterlimit:10;stroke-dasharray:3;}
-.st119{fill:none;stroke:#E9441D;stroke-width:1.062;stroke-miterlimit:10;stroke-dasharray:4;}
+.st119{fill:none;stroke:#E9441D;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:4;}
 .st120{fill:none;stroke:#E9441D;stroke-width:1.0524;stroke-miterlimit:10;stroke-dasharray:4;}
-.st121{fill:#E73118;}
+.st121{fill:#E73118; font-weight:bold;}
 .st122{fill:none;stroke:#E04729;stroke-width:1.8969;stroke-linecap:round;stroke-miterlimit:10;}
 .st123{fill:none;stroke:#E04729;stroke-width:2.023;stroke-linecap:round;stroke-miterlimit:10;}
 .st124{fill:none;stroke:#E8371E;stroke-width:0.991;stroke-miterlimit:10;stroke-dasharray:2.1286;}
@@ -429,7 +441,7 @@ svg g { transition:all 0.5s ease 0s;}
 .st126{stroke:#ABAAAA;stroke-width:0.2;stroke-miterlimit:10;}
 .st127{opacity:0.37;fill:none;stroke:#222222;stroke-width:1.2801;stroke-miterlimit:10;stroke-dasharray:2.5601;}
 .st128{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-.st129{fill:#797A7A;}
+.st129{ font-weight: bold;  fill: #4f4f4f; font-size: 14px;}
 .st130{fill:none;stroke:#80B9AB;stroke-width:1.277;stroke-miterlimit:10;}
 .st131{fill:none;stroke:#E04729;stroke-miterlimit:10;stroke-dasharray:4;}
 .st132{fill:none;stroke:#E04729;stroke-width:2.0107;stroke-miterlimit:10;}
@@ -455,9 +467,14 @@ svg g { transition:all 0.5s ease 0s;}
 .st151{stroke: #007e68;fill: none;stroke-width:2;}
 
 #line09-01 text { fill:#fff;  font-size: 14px; font-weight: bold;}
-
-
-.outro {}
+#line06 {stroke-width: 3px; stroke: #00ff43;stroke-dasharray: 0; }
+text.gwangju_text {font-size: 13px;font-weight: bold;fill: #005647; }
+g.a-06-text path { fill:#222; stroke: none; }
+#b06-text-01 path { fill: #1D2B58;}
+#p-g3-03  { transform: translate(-145px, 0px);}
+#blueWR { fill: #66c6e4;stroke: none; }
+#line12-02 text {   fill: #3e4a90;  stroke: none;font-weight: bold; }
+.outro {} 
 
 
 /*****footer*****/
@@ -585,7 +602,6 @@ font-family: 'Noto Sans KR', 'notokr-regular', 'Apple SD Gothic Neo','맑은 고
 /***** 노트북 *****/
 @media screen and (max-width: 1550px) {
 
-.para-holder p {    font-size: 18px;}
 
 
 
