@@ -683,7 +683,11 @@ $(function(){
 
 			case 22:
 				if(reverse){
+					$(".person-ch ellipse").css({"fill":"#007E68", "stroke":"inherit"});
+					$(".person-ch text").css({"fill":"#fff", "font-weight":"400"});
 
+					$("#line24-2").hide();
+					$("#a-08").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,100px)"});
 
@@ -694,7 +698,8 @@ $(function(){
 
 			case 23:
 				if(reverse){
-
+					$("#p-g2-07 ellipse").css({"stroke":"inherit"});
+					$("#p-g1-10 ellipse").css({"fill":"#fff", "stroke":"#dac776", "stroke-width":"3px"});
 				}else{
 					$("#a-08").show();
 					
@@ -707,17 +712,19 @@ $(function(){
 				break;
 			case 24:
 				if(reverse){
-				
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,100px)"});
+					$("#p-g2-07 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
+					$("#p-g1-10 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
+					$("#b06-text-01").hide();
 				}else{
 					$("#p-g2-07 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
 					$("#p-g1-10 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
-
-
 				}
 				break;
 			case 25:
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
+					$("#line19").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
 
@@ -729,26 +736,43 @@ $(function(){
 				break;
 			case 26:
 				if(reverse){
-		
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-20px,150px)"});
+					$("#line19").show();
+					$("#line18").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-20px,150px)"});
 					$("#line19").show();
-
 				}
 				break;
 			case 27:
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px,150px)"});
+
+					$("#line18").show();
+
+					$("#p-g4-01").hide();
+					$("#line21-02").hide();
+					$("#p-g3-03").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px,150px)"});
 					$("#line19").hide();
 					$("#line18").show();
-
 				}
 				break;
 			case 28:
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(30px,-120px)"});
+
+					$("#b06-text-01").show();
+					$("#line24-2").show();
+					$("#line21-02").show();
+					$("#line17").show();
+					$("#line09-01").show();
+					$("#busan").show();
+					$("#a-03").show();
+
+					$("#a-04").hide();
+					$("#a-09").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(30px,-120px)"});
 					$("#line18").hide();
@@ -762,7 +786,9 @@ $(function(){
 
 			case 29: // chapter 7 
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1) translate(0px,0px)"});
+					$("#line21-01").hide();
+					$("#line21-03").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1) translate(0px,0px)"});
 					$("#b06-text-01").hide();
@@ -780,7 +806,17 @@ $(function(){
 
 			case 30: 
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-100px)"});
+
+					$("#line21-01").show();
+					$("#line21-03").show();
+					
+					$("#p-g1-01").css({"opacity":"0.2"});
+					$("#p-g1-01").hide();
+					$("#line27").hide();
+					$("#line30").hide();
+					$("#a-11").hide();
+
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-100px)"});
 
@@ -791,7 +827,19 @@ $(function(){
 
 			case 31: 
 				if(reverse){
-	
+					$("#p-g1-01").show();
+					$("#line27").show();
+					$("#line30").show();
+					$("#a-11").show();
+					$("#a-04").show();
+					$("#p-g3-01").css({"transform":"translate(0px,0px)"});
+					$("#p-g3-03").css({"transform":"translate(-145px,0px)"});
+
+					$("#p-g3-04").hide();
+					$("#p-g3-05").hide();
+					$("#p-g3-06").hide();
+					$("#p-g3-07").hide();
+					$("#line29").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,-100px)"});
 
@@ -808,9 +856,11 @@ $(function(){
 
 			case 32: 
 				if(reverse){
-	
-				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,-100px)"});
+					$("#p-g3-02").css({"opacity":"0.2"});
+					$("#p-g3-02").hide();
+					$("#line39").hide();
+				}else{
 
 					$("#p-g1-01").hide();
 					$("#line27").hide();
@@ -830,7 +880,13 @@ $(function(){
 
 			case 33: 
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,-100px)"});
+					$("#line39").show();
+
+					$("#p-g3-08").hide();
+					$("#line38").hide();
+
+					$(".law-connect ellipse").css({"stroke":"#E8371E", "stroke-width":"1px"});
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,-100px)"});
 					$("#p-g3-02").css({"opacity":"1"});
@@ -842,12 +898,11 @@ $(function(){
 
 			case 34: //권순일 등장
 				if(reverse){ 
-	
+
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
 					$("#line39").hide();
 
-				
 					$("#p-g3-08").show();
 					$("#line38").show();
 					$(".law-connect ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
@@ -857,23 +912,25 @@ $(function(){
 
 			case 35: 
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
+					$("#line40").hide();
+					$("#line37").hide();
 				}else{
 					
-
-
 				}
 				break;
 
 			case 36: 
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(70px,70px)"});
+					$(".law-connect ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
+					$("#line40").show();
+					$("#line38").show();
+
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(70px,70px)"});
 					$("#line40").show();
 					$("#line37").show();
-
-
 				}
 				break;
 
@@ -882,7 +939,7 @@ $(function(){
 	
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1) translate(0px,0px)"});
-					$(".law-connect ellipse").css({"stroke":"auto", "stroke-width":"2px"});
+					$(".law-connect ellipse").css({"stroke":"#E8371E", "stroke-width":"2px"});
 					$("#line40").hide();
 					$("#line38").hide();
 
