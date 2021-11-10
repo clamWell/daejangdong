@@ -429,15 +429,14 @@ $(function(){
 				break;
 			case 8:
 				if(reverse){ // 9>0
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,150px)"});
 					$("#p-g1-01").css({"opacity":"1.0"});
 					$("#p-g1-02").css({"opacity":"1.0"});
 					$("#p-g1-03").css({"opacity":"1.0"});
 					$("#p-g1-07").css({"opacity":"1.0"});
 
-					$("#p-g2-03 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
-					$("#p-g1-06 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
-					//이동체크
-					//$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,150px)"});
+					$("#p-g2-03 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
+					$("#p-g1-06 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 
 				}else{ // 7>8
 					$("#line04-01").show();
@@ -446,8 +445,8 @@ $(function(){
 				break;
 			case 9:
 				if(reverse){ // 10>9
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,150px)"});
-
+					
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, 50px)"});
 					$("#p-g1-01").show();
 					$("#p-g1-02").show();
 					$("#p-g1-03").show();
@@ -766,13 +765,13 @@ $(function(){
 			case 24:
 				if(reverse){
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,100px)"});
-					$("#p-g2-07 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
-					$("#p-g1-10 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
+					$("#p-g2-07 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
+					$("#p-g1-10 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 					$("#b06-text-01").hide();
 				
 				}else{
-					$("#p-g2-07 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
-					$("#p-g1-10 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
+					$("#p-g2-07 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
+					$("#p-g1-10 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 
 
 				}
@@ -781,7 +780,7 @@ $(function(){
 				if(reverse){
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
 					$("#line19").hide();
-	
+					$("#b-05").find(".st62").show();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
 
@@ -796,7 +795,8 @@ $(function(){
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-20px,150px)"});
 					$("#line19").show();
 					$("#line18").hide();
-		
+					$("#p-g2-06").show();
+					$("#b-05").find(".st62").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-20px,150px)"});
 					$("#line19").show();
@@ -830,14 +830,22 @@ $(function(){
 					$("#b06-text-01").show();
 					$("#line24-2").show();
 					$("#line21-02").show();
-					$("#line17").show();
 					$("#line09-01").show();
 					$("#busan").show();
 					$("#a-03").show();
+					$("#b-05").show();
+					$("#b-06").show();
 
 					$("#a-04").hide();
 					$("#a-09").hide();
-	
+					$("#b-05-2").hide();
+					$("#line25-01").hide();
+					$("#a-09-title-01").hide();
+
+					$("#p-g2-04").css({"transform":"translate(30px, 0px)"});
+					$("#p-g2-05").css({"transform":"translate(20px, 0px)"});
+					$("#p-g2-07").css({"transform":"translate(0px, 0px)"});
+					$("#p-g2-08").css({"transform":"translate(0px, 0px)"});
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(30px,-120px)"});
 					$("#line18").hide();
@@ -873,7 +881,6 @@ $(function(){
 					$("#b06-text-01").hide();
 					$("#line24-2").hide();
 					$("#line21-02").hide();
-					$("#line17").hide();
 					$("#line09-01").hide();
 					$("#busan").hide();
 					$("#a-03").hide();
@@ -891,7 +898,7 @@ $(function(){
 					$("#line21-01").show();
 					$("#line21-03").show();
 					
-					$("#p-g1-01").css({"opacity":"0.2"});
+					$("#p-g1-01").css({"opacity":"0.2", "transform":"translate(0px,0px)"});
 					$("#p-g1-01").hide();
 					$("#line27").hide();
 					$("#line30").hide();
@@ -969,7 +976,9 @@ $(function(){
 					$("#p-g3-08").hide();
 					$("#line38").hide();
 
-					$(".law-connect ellipse").css({"stroke":"#E8371E", "stroke-width":"1px"});
+					$("#p-g3-03 ellipse.st102").css({"stroke":"#E8371E", "stroke-width":"1px"});
+					$("#p-g1-10 ellipse.st8").css({"stroke":"#dac776", "stroke-width":"3px"});
+					$("#p-g2-01 ellipse.st67").css({"stroke":"inherit"});
 	
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,-100px)"});
@@ -982,7 +991,9 @@ $(function(){
 
 			case 34: //권순일 등장
 				if(reverse){ 
-	
+					
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
+					
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
 					$("#line39").hide();
@@ -990,50 +1001,65 @@ $(function(){
 				
 					$("#p-g3-08").show();
 					$("#line38").show();
-					$(".law-connect ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
+					$(".law-connect ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 					//$(".law-connect path.st102").css({"stroke":"#27ff00", "stroke-width":"3px"});
 				}
 				break;
 
 			case 35: 
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-160px)"});
 					$("#line40").hide();
 					$("#line37").hide();
 	
 				}else{ //강찬우
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-160px)"});
 
-
 				}
 				break;
 
 			case 36: 
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(70px,70px)"});
+					$("#p-g1-10 ellipse").css({"stroke":"#dac776", "stroke-width":"3px"});
+					$("#p-g3-03 ellipse").css({"stroke":"#E8371E","stroke-width":"1px"});
+					$("#p-g2-01 ellipse").css({"stroke":"inherit","stroke-width":"1px"});
+
+					$("#line25-01").show();
+					$("#a-09-title-01").show(); 
+					$("#a-09-title-02").hide(); 
+
+					$("#line40").show();
+					$("#line38").show();
+
+					$(".law-connect ellipse").css({"stroke":"#111", "stroke-width":"3px"});
+					$("#p-g2-02 ellipse").css({"stroke":"inherit","stroke-width":"1px"});
+					$("#p-g1-06 ellipse").css({"stroke":"#dac776", "stroke-width":"3px"});
 				}else{ //권순일
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(70px,70px)"});
 					$("#line40").show();
 					$("#line37").show();
-
-
 				}
 				break;
 
 			case 37: //chapter 8 시작 
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(20px,70px)"});
+
+					$("#p-g1-07").css({"opacity":"0.2", "transform":"translate(0px,0px)"});
+					$("#p-g1-07").hide();
+					$("#line46").hide();
+					$(".p-record ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(20px,70px)"});
-					$("#p-g1-10 ellipse").css({"stroke":"#dac776", "stroke-width":"3px"});
-					$("#p-g3-03 ellipse").css({"stroke":"#E8371E","stroke-width":"1px"});
-					$("#p-g2-01 ellipse").css({"stroke":"inherit","stroke-width":"1px"});
 					
 					$("#line25-01").hide();
 					$("#a-09-title-01").hide(); 
 					$("#a-09-title-02").show(); 
 
-					$(".p-record ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
+					$(".p-record ellipse").css({"stroke":"#111", "stroke-width":"3px"});
+					$("#p-g2-01 ellipse").css({"stroke":"inherit","stroke-width":"1px"});
+					$("#p-g3-03 ellipse").css({"stroke":"#E8371E","stroke-width":"1px"});
 					$("#line40").hide();
 					$("#line38").hide();
 
@@ -1042,7 +1068,12 @@ $(function(){
 
 			case 38:
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,0px)"});
+					$("#p-g1-07").show();
+					$("#line46").show();
+
+					$("#line32-01").hide();
+					$("#line32-02").hide();
 				}else{//김용철 소송
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,0px)"});
 					$("#p-g1-06 ellipse").css({"stroke":"#dac776"});
@@ -1052,13 +1083,16 @@ $(function(){
 					$("#p-g1-07").css({"opacity":"1", "transform":"translate(100px,0px)"});
 					$("#p-g1-07").show();
 					$("#line46").show();
-
 				}	
 				break
 
 			case 39:
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,100px)"});
+					$("#line32-01").show();
+					$("#line32-02").show();
+
+					$("#line31").hide();
 				}else{//정재창 협박
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,100px)"});
 					$("#p-g1-07").hide();
@@ -1071,7 +1105,12 @@ $(function(){
 
 			case 40:
 				if(reverse){
-	
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,100px)"});
+					$("#line31").show();
+
+					$("#line45").hide();
+					$("#a-09-title-02").show(); 
+					$("#a-09-title-03").hide(); 
 				}else{//노래방
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,100px)"});
 					$("#line32-01").hide();
@@ -1090,8 +1129,6 @@ $(function(){
 					$("#line45").show();
 					$("#a-09-title-02").hide(); 
 					$("#a-09-title-03").show(); 
-
-
 				}	
 				break
 
