@@ -242,6 +242,67 @@ $(function(){
 		drawStage(nowStage,nowStageBefore);
 	});
 
+	$(".stage-navigator ul li").on("click", function(e){
+		e.preventDefault()
+		var _year = $(this).attr("data-index");
+		var startStage = 1;
+		switch (_year) {
+			case "2009":
+				startStage = 1;
+				break;
+			case "2010":
+				startStage = 6;
+				break;
+			case "2011":
+				startStage = 10;
+				break;
+			case "2012_2013":
+				startStage = 13;
+				break;
+			case "2014":
+				startStage = 17;
+				break;
+			case "2015":
+				startStage = 21;
+				break;
+			case "2016_2019":
+				startStage = 29;
+				break;
+			case "2019_pre":
+				startStage = 37;
+				break;
+			default:
+				startStage = 1;
+		}
+
+		if (nowStage>startStage) {
+			for(i=nowStage; i>startStage; i--){
+				drawStage(i,i+1);
+				nowStageBefore = nowStage;
+				nowStage = nowStage - 1;
+			}
+		} else if (nowStage==startStage){
+			
+		} else {
+			for(i=nowStage; i<startStage; i++){
+				drawStage(i+1,i);				
+				nowStageBefore = nowStage;
+				nowStage = nowStage + 1;				
+			}
+		}
+		checkChapter(nowStage);
+		adjustTextBox(nowStage);
+		if(nowStage<=1){
+			$(".arrow-prev").hide();
+		}else if(nowStage>1 && nowStage<41){
+			$(".arrow-prev").fadeIn();
+			$(".arrow-next").show();
+			$(".arrow-down").hide();
+		} else if(nowStage>=41){
+			$(".arrow-next").hide();
+			$(".arrow-down").fadeIn();
+		}
+	});
 
 	$(".arrow-down").on("click", function(e){
 		e.preventDefault()
@@ -1066,7 +1127,7 @@ $(function(){
 					$("#a-09-title-01").hide(); 
 					$("#a-09-title-02").show(); 
 
-					$(".p-record ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
+					$(".p-record ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 					$("#line40").hide();
 					$("#line38").hide();
 
