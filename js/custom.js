@@ -245,7 +245,7 @@ $(function(){
 
 	$(".arrow-down").on("click", function(e){
 		e.preventDefault()
-		$("html, body").animate({scrollTop: $(".outro").offset().top - 200}, 700, "easeOutCubic");
+		$("html, body").animate({scrollTop: $(".outro").offset().top - 200}, 1200, "easeOutCubic");
 	});
 
 
@@ -436,7 +436,7 @@ $(function(){
 					$("#p-g1-07").css({"opacity":"1.0"});
 
 					$("#p-g2-03 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
-					$("#p-g1-06 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
+					$("#p-g1-06 ellipse").css({"stroke":"#111", "stroke-width":"3px"})
 
 				}else{ // 7>8
 					$("#line04-01").show();
@@ -445,8 +445,8 @@ $(function(){
 				break;
 			case 9:
 				if(reverse){ // 10>9
-					
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, 50px)"});
+
 					$("#p-g1-01").show();
 					$("#p-g1-02").show();
 					$("#p-g1-03").show();
@@ -781,6 +781,7 @@ $(function(){
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
 					$("#line19").hide();
 					$("#b-05").find(".st62").show();
+	
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
 
@@ -797,6 +798,7 @@ $(function(){
 					$("#line18").hide();
 					$("#p-g2-06").show();
 					$("#b-05").find(".st62").hide();
+		
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-20px,150px)"});
 					$("#line19").show();
@@ -846,6 +848,7 @@ $(function(){
 					$("#p-g2-05").css({"transform":"translate(20px, 0px)"});
 					$("#p-g2-07").css({"transform":"translate(0px, 0px)"});
 					$("#p-g2-08").css({"transform":"translate(0px, 0px)"});
+	
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(30px,-120px)"});
 					$("#line18").hide();
@@ -881,6 +884,7 @@ $(function(){
 					$("#b06-text-01").hide();
 					$("#line24-2").hide();
 					$("#line21-02").hide();
+					$("#line17").hide();
 					$("#line09-01").hide();
 					$("#busan").hide();
 					$("#a-03").hide();
@@ -991,18 +995,16 @@ $(function(){
 
 			case 34: //권순일 등장
 				if(reverse){ 
-					
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
-					
+	
 				}else{
+					
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
 					$("#line39").hide();
-
-				
 					$("#p-g3-08").show();
 					$("#line38").show();
 					$(".law-connect ellipse").css({"stroke":"#111", "stroke-width":"3px"});
-					//$(".law-connect path.st102").css({"stroke":"#27ff00", "stroke-width":"3px"});
+
 				}
 				break;
 
@@ -1014,6 +1016,7 @@ $(function(){
 	
 				}else{ //강찬우
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-160px)"});
+
 
 				}
 				break;
@@ -1039,6 +1042,8 @@ $(function(){
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(70px,70px)"});
 					$("#line40").show();
 					$("#line37").show();
+
+
 				}
 				break;
 
@@ -1050,16 +1055,18 @@ $(function(){
 					$("#p-g1-07").hide();
 					$("#line46").hide();
 					$(".p-record ellipse").css({"stroke":"#111", "stroke-width":"3px"});
+	
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(20px,70px)"});
+					$("#p-g1-10 ellipse").css({"stroke":"#dac776", "stroke-width":"3px"});
+					$("#p-g3-03 ellipse").css({"stroke":"#E8371E","stroke-width":"1px"});
+					$("#p-g2-01 ellipse").css({"stroke":"inherit","stroke-width":"1px"});
 					
 					$("#line25-01").hide();
 					$("#a-09-title-01").hide(); 
 					$("#a-09-title-02").show(); 
 
-					$(".p-record ellipse").css({"stroke":"#111", "stroke-width":"3px"});
-					$("#p-g2-01 ellipse").css({"stroke":"inherit","stroke-width":"1px"});
-					$("#p-g3-03 ellipse").css({"stroke":"#E8371E","stroke-width":"1px"});
+					$(".p-record ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
 					$("#line40").hide();
 					$("#line38").hide();
 
@@ -1074,6 +1081,7 @@ $(function(){
 
 					$("#line32-01").hide();
 					$("#line32-02").hide();
+	
 				}else{//김용철 소송
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,0px)"});
 					$("#p-g1-06 ellipse").css({"stroke":"#dac776"});
@@ -1083,6 +1091,7 @@ $(function(){
 					$("#p-g1-07").css({"opacity":"1", "transform":"translate(100px,0px)"});
 					$("#p-g1-07").show();
 					$("#line46").show();
+
 				}	
 				break
 
@@ -1129,6 +1138,8 @@ $(function(){
 					$("#line45").show();
 					$("#a-09-title-02").hide(); 
 					$("#a-09-title-03").show(); 
+
+
 				}	
 				break
 
