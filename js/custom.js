@@ -261,17 +261,42 @@ $(function(){
 		}else{
 			console.log("다음스토리")
 		}
-
 		switch (n){
 			case 1: //case1은 reverse 케이스 밖에 없음
+				// 화살표
 				$("#line01").hide();
 				$("#line02").hide();
+				$("#line03").hide();
+				$("#line03-02").hide();
 				$("#p-g1-08").hide();
+				$("#gwangju_1_").hide();
+				$(".gwangju_text").hide();
+
+				// 사람
+				$("#p-g1-09").hide();
+				$("#p-g1-07").hide();
+				$("#p-g1-04").hide();
+				$("#p-g1-03").hide();
 				break;
 			case 2:
 				if(reverse){
 					$("#line03").hide();
-					$("#p-g1-09").hide();
+					$("#p-g1-09").show();
+
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,10px)"});
+					$("#gwangju_1_").show();
+					$("#line01").show();
+					$("#line02").show();
+					$("#line03").show();
+					$("#line03-02").show();
+
+					$("#p-g1-08 ellipse").css({"stroke":"inherit", "stroke-width":"0px"});
+					$("#busan").hide();
+					$("#line05-01").hide();
+					$("#line05-02").hide();
+					$("#line05-03").hide();
+					$(".st39 st40 st41").hide();
+
 				}else{
 					$("#gwangju_1_").show();
 					$("#p-g1-03").show();
@@ -285,11 +310,24 @@ $(function(){
 					$("#line03-02").show();
 					$("#p-g1-09").show();
 					$("#p-g1-04").show();
+					$(".gwangju_text").show();
 				}
 				break;
 			case 3:
 				if(reverse){
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,-50px)"});
+					$("#busan").show();
+					$("#line05-01").hide();
+					$("#line05-02").hide();
+					$("#line05-03").hide();
+					$("#p-g2-01").hide();
+					$("#p-g2-02").hide();
+					$("#b-01").hide();
 
+					$("#line05-01").show();
+					$("#line05-02").show();
+					$("#line05-03").show();
+					$("#p-g1-08 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,-50px)"});
 					$("#gwangju_1_").hide();
@@ -309,6 +347,7 @@ $(function(){
 			case 4:
 				if(reverse){ // 5>4
 					$("#p-g2-04").hide();
+					
 				}else{ // 3>4
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,150px)"});
 
@@ -320,20 +359,22 @@ $(function(){
 					$("#b-01").show();
 					$("#p-g2-01").show();
 					$("#p-g2-02").show();
-
-
 				}
 				break;
 			case 5:
 				if(reverse){ // 6>5
-
+					$("#b-01").show();
+					$("#b-03").hide();
+					$("#p-g2-04").css({"opacity":"1.0", "transform":"translate(0px, 0px)"});
 				}else{ // 4>5
 					$("#p-g2-04").show();
 				}
 				break;
 			case 6: //chater 2 시작
 				if(reverse){ // 7>6
-
+					$("#p-g2-03").hide();
+					$("#p-g2-03 ellipse").css({"stroke":"inherit"});
+					$("#p-g1-06 ellipse").css({"stroke":"inherit"});
 				}else{ // 5>6
 
 					$("#b-01").hide();
@@ -343,7 +384,8 @@ $(function(){
 				break;
 			case 7:
 				if(reverse){ // 8>7
-
+					$("#line04-01").hide();
+					$("#line04-02").hide();
 				}else{ // 6>7
 					
 					$("#p-g2-03").show();
@@ -353,7 +395,13 @@ $(function(){
 				break;
 			case 8:
 				if(reverse){ // 9>0
+					$("#p-g1-01").css({"opacity":"1.0"});
+					$("#p-g1-02").css({"opacity":"1.0"});
+					$("#p-g1-03").css({"opacity":"1.0"});
+					$("#p-g1-07").css({"opacity":"1.0"});
 
+					$("#p-g2-03 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
+					$("#p-g1-06 ellipse").css({"stroke":"#27ff00", "stroke-width":"3px"});
 				}else{ // 7>8
 					$("#line04-01").show();
 					$("#line04-02").show();
@@ -361,7 +409,17 @@ $(function(){
 				break;
 			case 9:
 				if(reverse){ // 10>9
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,150px)"});
 
+					$("#p-g1-01").show();
+					$("#p-g1-02").show();
+					$("#p-g1-03").show();
+					$("#p-g1-07").show();
+					$("#line04-01").show();
+					$("#line04-02").show();
+
+					$("#p-g1-10").hide();
+					$("#line06").hide();
 				}else{ // 8>9
 					$("#p-g2-03 ellipse").css({"stroke":"inherit"});
 					$("#p-g1-06 ellipse").css({"stroke":"inherit"});
@@ -373,6 +431,11 @@ $(function(){
 				break;
 			case 10: // chapter 3 시작
 				if(reverse){ // 11>10
+					$("#b-04").hide();
+					$("#p-g3-01").hide();
+					$("#line09-01").hide();
+					$("#line09-03").hide();
+					$("#p-g3-02").hide();
 
 				}else{ // 9>10
 					$("#p-g1-01").hide();
@@ -390,7 +453,8 @@ $(function(){
 				break;
 			case 11:
 				if(reverse){ // 12>11
-
+					$("#line08").hide();
+					$("#line07").hide();
 				}else{ // 10>11
 					$("#b-04").show();
 					$("#p-g3-01").show();
@@ -403,16 +467,46 @@ $(function(){
 				break;
 			case 12:
 				if(reverse){ // 13>12
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.2) translate(0px,-100px)"});
 
+					$("#p-g3-02").css({"opacity":"1.0"});
+
+					$("#p-g1-08").css({"transform":"translate(0px, 0px)"});
+					$("#p-g1-09").css({"transform":"translate(0px, 0px)"});
+					$("#p-g1-10").css({"transform":"translate(0px, 0px)"});
+
+					$("#line09-01").show();
+					$("#line07").show();
+					$("#line08").show();
+
+					$("#line10-01").hide();
+					$("#line10-02").hide();
+
+					$("#b-02").show();
+					$("#b-02-title-01").show();
+
+					$("#b-02-02").hide();
+					$("#b-02-title-02").hide();
 				}else{ // 11>12
 					$("#line08").show();
-					$("#p-g3-02").show();
 					$("#line07").show();
 				}
 				break;
 			case 13: // chapter 4 시작
 				if(reverse){ // 14>13
+					$("#b-05").hide();
+					$("#b-03").show();
+					$("#b-03-02").hide();
+					$("#b-03-title-2").show();
 
+					$("#p-g2-02").css({"transform":"translate(0px, 0px)"});
+					$("#p-g2-05").css({"transform":"translate(0px, 0px)"});
+
+					$("#p-g2-06").hide();
+					$("#p-g2-05").hide();
+
+					$("#line10-01").show();
+					$("#line10-02").show();
 				}else{ // 12>13
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, 200px)"});
 
@@ -435,14 +529,13 @@ $(function(){
 					$("#line10-01").show();
 					$("#line10-02").show();
 
-
-
 				}
 				break;
 
 			case 14:
 				if(reverse){
-
+					$("#line11").hide();
+					$("#line12-01").hide();
 				}else{
 					$("#b-05").show();
 					$("#b-03").hide();
@@ -462,7 +555,13 @@ $(function(){
 				break;
 			case 15:
 				if(reverse){ 
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, 200px)"});
 
+					$("#line11").show();
+					$("#line12-01").show();
+
+					$("#a-02").hide();
+					$("#line12-02").hide();
 				}else{ 
 					$("#line11").show();
 					$("#line12-01").show();
@@ -471,7 +570,15 @@ $(function(){
 				break;
 			case 16:
 				if(reverse){ // 17>16
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.2) translate(-50px, 70px)"});
 
+					$("#line09-03").show();
+					$("#p-g3-02").show();
+					$("#line12-02").show();
+					$("#line12-01").show();
+					$("#line13").hide();
+					$("#a-02").show();
+					$("#a-03").hide();
 				}else{ // 15>16
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.2) translate(-50px, 70px)"});
 					$("#line11").hide();	
@@ -483,6 +590,12 @@ $(function(){
 				break;
 			case 17: //chapter 5 시작
 				if(reverse){ // 18>17
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.2) translate(0px, -50px)"});
+
+					$("#p-g1-11").hide();
+					$("#line09-01").hide();
+					$("#line09-02").hide();
+					$("#line17").hide();
 
 				}else{ // 16>17
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.2) translate(0px, -50px)"});
@@ -499,7 +612,14 @@ $(function(){
 				break;
 			case 18:
 				if(reverse){
-
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, -150px)"});
+					
+					$("#line14").hide();
+					$("#b-02-title-02").show();
+					$("#line13").show();
+					$("#b-06").hide();
+					$("#p-g2-07").hide();
+					$("#p-g2-08").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, -150px)"});
 
@@ -513,7 +633,9 @@ $(function(){
 				break;
 			case 19:
 				if(reverse){
-
+					$("#b-03-02").show();
+					$("#b-07").hide();
+					$("#p-g2-02").css({"transform":"translate(25px, 0px)"});
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, 150px)"});
 
@@ -528,7 +650,13 @@ $(function(){
 
 			case 20:
 				if(reverse){
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, 150px)"});
+					$("#p-g2-02").css({"transform":"translate(-10px, 0px)"});
 
+					$("#line14").show();
+					$("#line17").show();
+					$("#b-07").show();
+					$("#line09-02").show();
 				}else{
 					$("#b-03-02").hide();
 					$("#b-07").show();
@@ -538,7 +666,10 @@ $(function(){
 
 			case 21: //chapter 6 시작
 				if(reverse){
+					$(".svg-holder.chapter1 svg").css({"transform":"scale(1)"});
 
+					$("#a-06").hide();
+					$("#a-07").hide();
 				}else{
 					$(".svg-holder.chapter1 svg").css({"transform":"scale(1)"});
 				
