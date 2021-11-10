@@ -285,8 +285,6 @@ $(function(){
 					$("#line03-02").show();
 					$("#p-g1-09").show();
 					$("#p-g1-04").show();
-
-					
 				}
 				break;
 			case 3:
