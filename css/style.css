@@ -674,6 +674,19 @@ body.scrollOff{position:fixed;overflow:hidden;height:100%;}
 .art_header .tit_view {   overflow: hidden;  margin-top: 4px;font-weight: normal;color: #121212; font-size: 24px; line-height: 29px;letter-spacing: -0.025em;}
 .art_header { padding-top: 10px; }
 
+.story-top-graphic img {width: 120%; margin-left: -160px;}
+.story-title-box {position: inherit; margin: 20px auto;}
+.story-title-box .main-title {width: 90%;}
+.story-title-box .sub-title {width: 95%;}
+.para-holder { width: 90%;}
+.para-holder > p { font-size: 18px;}
+#S01_01 img {width: 95%; border-radius: 10px;}
+#S01_02 img { width: 100%;}
+.introduction .desc p {font-size: 16px;}
+.introduction .desc button {width: 200px; font-size: 16px;}
+
+#S03_01 img {width:95%;}
+#S03_02 img {width:95%;}
 
 .digital-list { padding-top: 30px; }
 /*********digital common byline*******/
@@ -696,7 +709,6 @@ body.scrollOff{position:fixed;overflow:hidden;height:100%;}
 
 /****** 모바일 Landscape *****/
 @media (max-width: 800px) and (orientation: landscape){
-
 
 
 }
