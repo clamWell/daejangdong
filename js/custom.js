@@ -277,7 +277,7 @@ $(function(){
 
 		if (nowStage>startStage) {
 			for(i=nowStage; i>startStage; i--){
-				drawStage(i,i+1);
+				drawStage(i-1,i);
 				nowStageBefore = nowStage;
 				nowStage = nowStage - 1;
 			}
@@ -287,7 +287,7 @@ $(function(){
 			for(i=nowStage; i<startStage; i++){
 				drawStage(i+1,i);				
 				nowStageBefore = nowStage;
-				nowStage = nowStage + 1;				
+				nowStage = nowStage + 1;	
 			}
 		}
 		checkChapter(nowStage);
