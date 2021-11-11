@@ -182,7 +182,7 @@ width: 27px; height: 30px;}
 
 
 
-.story-header {background: #216929; min-height: 700px; width: 100%;overflow: hidden;  box-sizing: border-box; padding: 40px 0;}
+.story-header {background: #216929; width: 100%;overflow: hidden;  box-sizing: border-box; padding: 40px 0;}
 .story-top-graphic{ width:100%; }
 .story-top-graphic img {animation: changeColor 10s linear infinite;  margin: 0 auto; display: block;position: relative; left: 50%; margin-left: -300px; }
 .story-title-box {  position: absolute;width: 100%;top: 450px;}
@@ -626,7 +626,7 @@ font-family: 'Noto Sans KR', 'notokr-regular', 'Apple SD Gothic Neo','맑은 고
 @media screen and (max-width: 1550px) {
 
 
-
+.svg-holder { max-width: 500px; }
 
 
 }
@@ -642,7 +642,7 @@ body.scrollOff{position:fixed;overflow:hidden;height:100%;}
 .img-m { display:block; }
 .wrap { overflow-x: hidden; }
 .interactive-header{ height: 40px;padding: 0px 5px; }
-.interactive-header .khan_btn img { width:80px; }
+.interactive-header .집 너무 부담스러우면khan_btn img { width:80px; }
 
 /* #header - GNB */
 #header { display:none;  }
@@ -692,9 +692,17 @@ body.scrollOff{position:fixed;overflow:hidden;height:100%;}
 #S01_02 img { width: 100%;}
 .introduction .desc p {font-size: 16px;}
 .introduction .desc button {width: 200px; font-size: 16px;}
-
 #S03_01 img {width:95%;}
 #S03_02 img {width:95%;}
+
+
+.text-area { display:none;}
+.border-left {display:none;}
+.border-right {display:none;}
+.svg-holder { width: 100%;  max-width: inherit; left: 0;}
+.svg-holder svg {transform: scale(1) translate(0px, 0px);}
+
+
 
 .digital-list { padding-top: 30px; }
 /*********digital common byline*******/
