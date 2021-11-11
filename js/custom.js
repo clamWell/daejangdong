@@ -114,7 +114,11 @@ $(function(){
 		$(".storytelling-area").find(".fixed-area").removeClass("fixed-bottom");
 		$(".interactive-header").addClass("storyMode");
 
-
+        $(".border-div").addClass("border-show");
+           
+        if( isEverStart == true ){
+            $(".cover").fadeOut();
+        }
 	}
 
 	var cancelStoryMode = function(){
@@ -122,7 +126,9 @@ $(function(){
 		nowStoryMode = false;
 		$(".storytelling-area").find(".fixed-area").removeClass("fixed");
 		$(".storytelling-area").find(".fixed-area").removeClass("fixed-bottom");
-		$(".interactive-header").removeClass("storyMode");
+		$(".interactive-header").removeClass("storyMode");        $(".border-div").removeClass("border-show");
+        $(".cover").fadeIn();
+
 
 	};
 
@@ -132,6 +138,8 @@ $(function(){
 		$(".storytelling-area").find(".fixed-area").removeClass("fixed");
 		$(".storytelling-area").find(".fixed-area").addClass("fixed-bottom");
 		$(".interactive-header").removeClass("storyMode");
+        $(".border-div").removeClass("border-show");
+        $(".cover").fadeIn();
 
 	};
 
@@ -227,6 +235,7 @@ $(function(){
 		checkChapter(nowStage);
 		adjustTextBox(nowStage);
 		drawStage(nowStage,nowStageBefore);
+        adjustBottomProgress(nowStage);
 
 	});
 	//이전
@@ -243,8 +252,15 @@ $(function(){
 		checkChapter(nowStage);
 		adjustTextBox(nowStage);
 		drawStage(nowStage,nowStageBefore);
+        adjustBottomProgress(nowStage);
 	});
     
+    function adjustBottomProgress(stage){
+		var totalStage = 41;
+		$(".progress-body .now").stop().animate({"width":100/totalStage*stage+ "%"}, 400, "swing");
+	};
+
+
     $(".stage-navigator ul li").eq(0).addClass("on");
 	$(".stage-navigator ul li").on("click", function(e){
 		e.preventDefault()
@@ -309,6 +325,7 @@ $(function(){
 		}
 		checkChapter(nowStage);
 		adjustTextBox(nowStage);
+        adjustBottomProgress(nowStage);
 		if(nowStage<=1){
 			$(".arrow-prev").hide();
 		}else if(nowStage>1 && nowStage<41){
@@ -340,7 +357,9 @@ $(function(){
 
 
 	//처음 스타트
+    var isEverStart = false;
 	$("#START_STORY").on("click", function(){
+        isEverStart = true;
 		$(".cover").fadeOut();
 
 		$(".stage-info .chapter-name").animate({"top":"0px", "opacity":"1"}, 1000, "easeOutCirc");

@@ -247,14 +247,14 @@ b.green-highlight { background: #00ff1d; display: inline;  }
 #S03_02 img { margin: 0 auto; display: block;}
 
 
-.storytelling-area {position: relative; height:220vh; }
+.storytelling-area {position: relative; height:220vh;overflow: hidden; }
 .fixed-area {transition:all 0.5s ease 0s; box-sizing: border-box;width: 100%; height: 100vh; position: relative; }
 
 .intro {  box-sizing: border-box; padding: 30px 0; width: 100%;background: #edefed; background:#fff;}
 .intro .para-holder p { }
 .intro .para-holder p.sm {  font-weight: normal; opacity: 0.85; font-family: 'Noto Sans KR', 'notokr-regular'}
-.fixed-area.fixed { position: fixed; top: 0; left:0;    z-index: 10;border: 20px solid #023f09;}
-.fixed-area.all_border { border: 20px solid #023f09; }
+.fixed-area.fixed { position: fixed; top: 0; left:0;    z-index: 10; /* border: 20px solid #023f09; */}
+.fixed-area.all_border { /* border: 20px solid #023f09 */; }
 .fixed-area.fixed-bottom { position: absolute; top: auto; bottom:0;}
 .interactive-header.storyMode { background: #023f09; }
 .interactive-header.storyMode .page-title { color:#fff;}
@@ -301,7 +301,6 @@ b.green-highlight { background: #00ff1d; display: inline;  }
 .each-stage .story-area .para span.name10 {background: #dac776; color: #222;}
 .each-stage .story-area .para span.name11 {background: #66c6e4; }
 
-
 .arrow-holder{ position: absolute;width: 100%; bottom:0;z-index: 3;}
 .arrow-prev { position: absolute; bottom:50px; left:50px; }
 .arrow-next { position: absolute; bottom:50px; right:50px; }
@@ -309,10 +308,19 @@ b.green-highlight { background: #00ff1d; display: inline;  }
 .arrow-box p { font-size: 16px; color: #fff;  font-weight: 500;}
 .arrow-box.btn-effect::after {  border-radius: 50%; transform: scale(1.3,1.3); border: 2px solid #023f09;}
 .arrow-down {position: absolute; right: 50px; bottom: 50px;display:none; cursor:pointer;}
-
 .arrow-down .going-down {  margin-top: 0; width: 100px; height: 100px; box-sizing: border-box; padding: 20px; background: #f0f0f0;}
-
 .btn-effect:hover::after {opacity: 1;transform: scale(1,1);}
+
+.border-div { position: absolute; z-index: 4;transition:all 0.7s ease 0s; }
+.border-left { width: 20px; height:100%; background: #023f09; top:0;bottom:0;left:0;left: -20px;}
+.border-right {width: 20px; height:100%; background: #023f09; top:0;bottom:0;right:0;right:-20px;}
+.border-bottom {width: 100%; height: 20px; background: #023f09; bottom:0;left:0;right:0;bottom:-20px;}
+.border-show.border-left { left:0; }
+.border-show.border-right { right:0; }
+.border-show.border-bottom { bottom:0; box-sizing:border-box;}
+.progress-bar { width:100%; box-sizing:border-box; height: 4px; margin-top: 7px;  padding: 0px 20px; }
+.progress-body { width:100%; height:100%; background: rgba(255,255,255,0.1); position: relative;  border-radius: 6px; overflow: hidden;}
+.progress-body .now { position: absolute; top: 0; left:0; width:0%; height:100%; background:#00b192; } 
 
 .svg-area { width:100%; box-sizing:border-box; padding: 50px 0;background: #f5f5f5; background: #e3e4e3;  overflow: hidden;height:100%; position:absolute; top:0; left:0; width:100%; z-index: 1; }
 .svg-area {opacity: 0.3; filter: blur(5px); -webkit-filter: blur(5px);transition:all 1s ease 0s;  }
