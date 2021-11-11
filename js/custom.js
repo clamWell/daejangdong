@@ -207,7 +207,10 @@ $(function(){
 		$(".chapter-name").html("chapter. "+ch);
 		$(".stage-info .year").html(chapterYearList[ch-1]);
 		$(".stage-info .stage-title").html(chapterTitleList[ch-1]);
+        $(".stage-navigator ul li").removeClass("on");
+        $(".stage-navigator ul li").eq(ch-1).addClass("on");
 		showChapterTitle();
+
 	};
 
 	//다음
@@ -241,9 +244,16 @@ $(function(){
 		adjustTextBox(nowStage);
 		drawStage(nowStage,nowStageBefore);
 	});
-
+    
+    $(".stage-navigator ul li").eq(0).addClass("on");
 	$(".stage-navigator ul li").on("click", function(e){
 		e.preventDefault()
+
+        $(".stage-navigator ul li").removeClass("on");
+        $(this).addClass("on");
+        
+        $(".stage-navigator ul").addClass("block");
+
 		var _year = $(this).attr("data-index");
 		var startStage = 1;
 		switch (_year) {
@@ -280,6 +290,10 @@ $(function(){
 				drawStage(i-1,i);
 				nowStageBefore = nowStage;
 				nowStage = nowStage - 1;
+
+                if(i == startStage+1){
+                    $(".stage-navigator ul").removeClass("block");
+                }
 			}
 		} else if (nowStage==startStage){
 			
@@ -287,7 +301,10 @@ $(function(){
 			for(i=nowStage; i<startStage; i++){
 				drawStage(i+1,i);				
 				nowStageBefore = nowStage;
-				nowStage = nowStage + 1;	
+				nowStage = nowStage + 1;
+                if(i == startStage-1 ){
+                    $(".stage-navigator ul").removeClass("block");
+                }
 			}
 		}
 		checkChapter(nowStage);
@@ -302,6 +319,7 @@ $(function(){
 			$(".arrow-next").hide();
 			$(".arrow-down").fadeIn();
 		}
+        
 	});
 
 	$(".arrow-down").on("click", function(e){

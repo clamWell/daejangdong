@@ -263,8 +263,10 @@ b.green-highlight { background: #00ff1d; display: inline;  }
 
 .stage-navigator {margin-bottom: 20px;   margin-top: 20px;}
 .stage-navigator ul {    text-align: right;}
-.stage-navigator ul li{ border: 2px solid transparent;   font-size: 14.5px; display: inline-block;  cursor: pointer; box-sizing:border-box; padding: 4px 8px; border-radius: 5px;background:#023f09; color:#b4c3b6; }
+.stage-navigator ul li{ border: 2px solid transparent;   font-size: 14px; display: inline-block;  cursor: pointer; box-sizing:border-box; padding: 3px 6px; border-radius: 5px;background:#023f09; color:#8e9b90; }
 /* .stage-navigator ul::after { clear:both; content:""; display: block; } */
+.stage-navigator ul li.on { color:#fff;cursor: default; pointer-events: none; }
+.stage-navigator ul.block li { pointer-events: none; cursor: auto;  }
 
 .cover { position:absolute;top:0; left:0;width:100%;height:100%;    z-index: 3;  }
 .introduction { position:absolute; top:0; left:0;  background: rgba(245,245,245,0.9);background: rgba(0,21,2,0.8); width:100%;height:100%;  }
