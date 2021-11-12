@@ -134,9 +134,11 @@
 
 					<div class="story-top-graphic">
 						<div class="story-top-graphic-inside">
-							<img class="circle-back circle-wrap change-color title-image" src="img/circle_back.png">
-							<img class="handshake circle-wrap title-image" src="img/handshake.png">
-							<img class="circle-wrap circle-front title-image" src="img/circle_front.png">
+							<div class="hand-shake-group">
+								<img class="circle-back change-color title-image" src="img/circle_back.png">
+								<img class="handshake title-image" src="img/handshake.png">
+								<img class="circle-front title-image" src="img/circle_front.png">
+							</div>
 							<img class="small-crain title-image" src="img/small_crain.png">
 							<img class="big-crain title-image" src="img/big_crain.png">
 							<img class="title-back change-color title-image" src="img/title-back.png">
@@ -335,11 +337,11 @@
 											<ellipse class="st8" cx="352.9" cy="319" rx="46.5" ry="24.2"/>
 											<text transform="matrix(1 0 0 1 324.4933 325.424)" class="st10 st3 st4">정재창</text>
 										</g>
-										<g id="p-g1-05" class="person-ch clickAble">
+										<g id="p-g1-05" class="person-ch clickAble" data-tooltip-id="namuk">
 											<ellipse class="st8" cx="352.9" cy="378.9" rx="46.5" ry="24.2"/>
 											<text transform="matrix(1 0 0 1 334.4933 385.424)" class="st10 st3 st4">남욱</text>
 										</g>
-										<g id="p-g1-06" class="person-ch p-record clickAble">
+										<g id="p-g1-06" class="person-ch p-record clickAble" data-tooltip-id="jungyounghak">
 											<ellipse class="st8" cx="352.9" cy="438.7" rx="46.5" ry="24.2"/>
 											<text transform="matrix(1 0 0 1 325.2933 445.3056)" class="st10 st3 st4">정영학</text>
 										</g>
@@ -355,7 +357,7 @@
 											<ellipse class="st8" cx="352.9" cy="618.4" rx="46.5" ry="24.2"/>
 											<text transform="matrix(1 0 0 1 325.2933 624.9492)" class="st10 st3 st4">배성준</text>
 										</g>
-										<g id="p-g1-10" class="person-hc person-ch law-connect p-record clickAble">
+										<g id="p-g1-10" class="person-hc person-ch law-connect p-record clickAble" data-tooltip-id="kimmanbae">
 											<ellipse class="st8" cx="352.9" cy="677.5" rx="46.5" ry="24.2"/>
 											<text transform="matrix(1 0 0 1 325.2933 684.0448)" class="st10 st3 st4">김만배</text>
 										</g>
@@ -743,11 +745,11 @@
 											<ellipse class="st67" cx="114" cy="95.7" rx="46.5" ry="24.2"/>
 											<text transform="matrix(1 0 0 1 84.7886 102.2235)" class="st68 st3 st4">이재명</text>
 										</g>
-										<g id="p-g2-02" class="p-record clickAble">
+										<g id="p-g2-02" class="p-record clickAble" data-tooltip-id="yoodonggyu">
 											<ellipse class="st67" cx="224.4" cy="95.7" rx="46.5" ry="24.2"/>
 											<text transform="matrix(1 0 0 1 195.2837 102.2235)" class="st68 st3 st4">유동규</text>
 										</g>
-										<g id="p-g2-03" class="clickAble">
+										<g id="p-g2-03" class="clickAble" data-tooltip-id="choiyoungil">
 											<g>
 												<ellipse class="st67" cx="114.5" cy="184.8" rx="46.5" ry="24.2"/>
 											</g>
@@ -765,7 +767,7 @@
 											<ellipse class="st67" cx="485.7" cy="95.7" rx="41.5" ry="21.7"/>
 											<text transform="matrix(1 0 0 1 459.6711 101.5244)" class="st68 st3 st70">황무성</text>
 										</g>
-										<g id="p-g2-07">
+										<g id="p-g2-07" class="clickAble" data-tooltip-id="jungminyong">
 											<ellipse class="st67" cx="354.1" cy="184.8" rx="37.3" ry="19.5"/>
 											<text transform="matrix(1 0 0 1 330.6534 190.0548)" class="st68 st3 st71">정민용</text>
 										</g>
@@ -1378,7 +1380,7 @@
 												v58.5C376.1,926.2,365.5,936.8,352.4,936.8z"/>
 											<text transform="matrix(1 0 0 1 55.3174 830.9671)" class="st101 st3 st4">법조계</text>
 										</g>
-										<g id="p-g3-01">
+										<g id="p-g3-01" class="clickAble" data-tooltip-id="parkyoungsoo">
 											<ellipse class="st102" cx="298.9" cy="882.1" rx="46.5" ry="24.2"/>
 											<text transform="matrix(1.0257 0 0 1 271.2825 888.2488)" class="st103 st3 st104">박영수</text>
 										</g>
@@ -2359,6 +2361,24 @@
 									</div>
 								</div>
 							</div>
+							<div class="tooltip">
+								<div class="tooltip-wrap">
+									<p class="tooltip-close">×</p>
+									<div class="col-2">
+										<div class="col-left thumbs">
+											<img src="https://img.khan.co.kr/spko/storytelling/2021/network/img_thumb_human_profile.jpg" alt="">
+										</div>
+										<div class="col-right info">
+											<ul>
+												<li class="row-name"><span class="name">남욱</span></li>
+												<li class="row-year"><span class="head">출생년도</span> <span class="birth">1973</span></li>
+												<li class="row-pos"><span class="head">직업</span> <span class="occu">변호사</span></li>
+												<li class="row-pos"><span class="head">역할</span> <span class="position_now">천화동인 4호 소유주</span></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								</div>
 							<div class="cover">
 								<div class="introduction">
 									<div class="desc">
@@ -2368,15 +2388,16 @@
 									</div>
 								</div>
 							</div>
-							<div class="border-left border-div"></div>
-							<div class="border-right border-div"></div>
-							<div class="border-bottom border-div">
+							<div class="border-top border-div">
 								<div class="progress-bar">
 									<div class="progress-body">
 										<div class="now"></div>
 									</div>
 								</div>
 							</div>
+							<div class="border-left border-div"></div>
+							<div class="border-right border-div"></div>
+							<div class="border-bottom border-div"></div>
 						</div>
 					</div>
 					<div class="outro">
@@ -2412,7 +2433,15 @@
 							<p>한 문장에 담긴 10여년의 기록입니다.</p>
 						</div>
 					</div>
-
+					<div class="ref-box">
+						<h2>대장동 개발 논란 관련 인물 DB</h2>
+						<ul>
+							<li>
+								<a href="https://docs.google.com/spreadsheets/d/1lzOj2nTaVHNYfx3VMo0_RVq1AsjzRvp3p5GXDzUbrgU/" target="_blank"><div class="btn">인물 DB 보러가기</div></a>
+							</li>
+							<li>언론에 공식 보도를 토대로 사건과 관련된 인물들의 정보를 연도별로 정리했습니다. </li>
+							<li>각 셀에서 하이퍼링크를 통해 정보의 출처 기사를 확인하실 수 있습니다.</li>
+					</div>
 				</div>
 				<!-- 하단 공통영역 (S) -->
 

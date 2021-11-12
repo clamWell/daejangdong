@@ -99,7 +99,105 @@ $(function(){
 
 	}
 
+	var tooltipPersonData = [
+	  {
+		"name": "남욱",
+		"code": "namuk",
+		"birth": 1973,
+		"occu": "변호사",
+		"position": "천화동인 4호 소유주, 대장동 민간개발 4인방 중 1인"
+	  },
+	  {
+		"name": "정영학",
+		"code": "jungyounghak",
+		"birth": 1968,
+		"occu": "회계사",
+		"position": "천화동인 5호 소유주, 대장동 민간개발 4인방 중 1인"
+	  },
+	  {
+		"name": "김만배",
+		"code": "kimmanbae",
+		"birth": 1965,
+		"occu": "기자",
+		"position": "천화동인 5호 소유주, 대장동 민간개발 4인방 중 1인"
+	  },
+	  {
+		"name": "유동규",
+		"code": "yoodonggyu",
+		"birth": 1969,
+		"occu": "공직자",
+		"position": "화천대유 대주주, 천하동인 1호 소유주, 부인이 천하동인 2호 소유주"
+	  },
+	  {
+		"name": "정민용",
+		"code": "jungminyong",
+		"birth": 1974,
+		"occu": "전 변호사 / 투자사업실장",
+		"position": "성남도시공사 투자사업실장으로 대장동 부동산 개발 기획"
+	  },
+	  {
+		"name": "최윤길",
+		"code": "choiyoungil",
+		"birth": 1959,
+		"occu": "전 시의원",
+		"position": "화천대유 부회장, 성남시의원 시절 대장동 민간개발 업체와 커넥션 의혹"
+	  },
+	  {
+		"name": "박영수",
+		"code": "parkyoungsoo",
+		"birth": 1952,
+		"occu": "법조인",
+		"position": "화천대유 고문, 딸이 화천대유에서 근무, 변호사 시절 남욱 변호 담당"
+	  }
+	];
+	$(".clickAble").on("click", function(){
+		var el_id = $(this).attr("data-tooltip-id");
+		//console.log(el_id);
+		//console.log(mouseX, mouseY)
+		makeTooltip(el_id);
+	});
 
+	/*
+	var hoverElPreColor;
+	$(".clickAble").on("mouseover", function(){
+		$(this).find("ellipse").css({"fill":"#cddc39"});
+		
+	});
+	$(".clickAble").on("mouseleave", function(){
+		$(this).find("ellipse").css({"fill":"inherit"});
+		
+	});*/
+
+	function makeTooltip(el_id){
+		var _data;
+		var code = el_id || "namuk";
+
+		tooltipPersonData.forEach(function(v,i,a){
+			if(v.code == code){
+				_data = v; 
+			}
+		})
+		$(".tooltip .tooltip-wrap .col-2 .info ul li span.name").html(_data.name);
+		$(".tooltip .tooltip-wrap .col-2 .info ul li span.birth").html(_data.birth);
+		$(".tooltip .tooltip-wrap .col-2 .info ul li span.occu").html(_data.occu);
+		$(".tooltip .tooltip-wrap .col-2 .info ul li span.position_now").html(_data.position);
+		$(".tooltip .tooltip-wrap .col-2 .thumbs img").attr("src", "img/"+_data.code+".jpg")
+
+		showTooltip();
+	}
+
+	function showTooltip(){
+		$(".tooltip").css({"left":mouseX+40, "top":mouseY});
+		$(".tooltip").show();
+	};
+	function hideTooltip(){
+		$(".tooltip").css({"left":0, "top":0});
+		$(".tooltip").hide();
+	};
+
+	$(".tooltip-close").on("click", function(){
+		hideTooltip();
+	});
 
 	var storyArea_pos = $(".storytelling-area").offset().top,
 		storyArea_end_pos = $(".storytelling-area").offset().top + $(".storytelling-area").height()-screenHeight;
@@ -362,9 +460,9 @@ $(function(){
         isEverStart = true;
 		$(".cover").fadeOut();
 
-		$(".stage-info .chapter-name").animate({"top":"0px", "opacity":"1"}, 1000, "easeOutCirc");
-		$(".stage-info .year").delay(300).animate({"top":"0px", "opacity":"1"}, 1000, "easeOutCirc");
-		$(".stage-info .stage-title").delay(600).animate({"top":"0px", "opacity":"1"}, 1000, "easeOutCirc", function(){
+		$(".stage-info .chapter-name").animate({"top":"0px", "opacity":"1"}, 700, "easeOutCirc");
+		$(".stage-info .year").delay(300).animate({"top":"0px", "opacity":"1"}, 700, "easeOutCirc");
+		$(".stage-info .stage-title").delay(600).animate({"top":"0px", "opacity":"1"}, 500, "easeOutCirc", function(){
 			$(".st-1").fadeIn(500);
 			$(".svg-area").addClass("start");
 			$(".arrow-next").fadeIn();
@@ -1267,6 +1365,12 @@ $(function(){
 		}
 
 	});
+
+	var mouseX, mouseY;
+	$(document).mousemove(function(e) {
+		mouseX = e.clientX;
+		mouseY = e.clientY;
+	}).mouseover();
 
 });
 
