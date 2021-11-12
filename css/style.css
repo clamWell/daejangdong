@@ -181,15 +181,41 @@ width: 27px; height: 30px;}
 .pc-share .share_bx > .share_tw {width: 40px; margin: 7px 7px;}
 
 
-
 .story-header {background: #216929; width: 100%;overflow: hidden;  box-sizing: border-box; padding: 40px 0;}
-.story-top-graphic{ width:100%; }
-.story-top-graphic img {animation: changeColor 10s linear infinite;  margin: 0 auto; display: block;position: relative; left: 50%; margin-left: -300px; }
+.story-top-graphic{ width:100%; height: 877px;}
+.story-top-graphic-inside {width: 80%; height: 100%; margin-left: 20%;}
 .story-title-box {  position: absolute;width: 100%;top: 450px;}
 .story-title-box > h1 { display:none; text-indent: -99999999px; }
 .story-title-box .main-title {margin: 0 auto; display: block;}
 .story-title-box .sub-title {margin: 30px auto; display: block;}
 
+/* .story-top-graphic .change-color {animation: changeColor 10s linear infinite;  display: block;}
+.title-back {width: 85%; left: 47.2%;top: 230px;  margin-left: -300px;}
+.title-image {position:absolute; margin-left: -300px;}
+.circle-wrap {margin-left: -300px;}
+.circle-back{left:60%;}
+.circle-front {width: 850px; top: -30px; right:85px; }
+.handshake {width: 690px; top: -50px; right: 190px; }
+.title-total {left: 50%; }
+.hyena {margin-left: 0px; right:300px; top: 270px;}
+.apartment-front { width: 450px; top: 230px; margin-left: 0px; right:20px; }
+.small-crain {margin-left: 0px; top: 220px; left: 490px;}
+.big-crain {right:-150px; width: 570px; top:-2px;}
+.air-plane {left:60%; top: 190px;} */
+
+.story-top-graphic .change-color {animation: changeColor 10s linear infinite;  display: block;}
+.title-back {left: 47.2%;top: 230px;  margin-left: -300px;}
+.title-image {position:absolute; margin-left: -300px;}
+.circle-wrap {margin-left: -300px;}
+.circle-back{left:60%;}
+.circle-front { top: -30px; right:85px; }
+.handshake {top: -50px; right: 190px; }
+.title-total {left: 50%; }
+.hyena {margin-left: 0px; right:300px; top: 270px;}
+.apartment-front { top: 230px; margin-left: 0px; right:20px; }
+.small-crain {margin-left: 0px; top: 220px; left: 490px;}
+.big-crain {right:-150px; top:-2px;}
+.air-plane {left:60%; top: 190px;}
 
 @keyframes changeColor{
 	0%{ filter: hue-rotate(0deg); }
