@@ -106,7 +106,7 @@ $(function(){
 					$(".story-title-box .sub-title").animate({"opacity":"1", "top":"0px"}, 1000, "easeOutSine");
 				}
 			};
-		}, 1000)
+		}, 2000)
 	}
 
 
@@ -333,8 +333,14 @@ $(function(){
 	};
 
 	//다음
+	var isArrowBoxEverClicked = false;
 	$(".arrow-next").on("click", function(e){
 		e.preventDefault()
+		if(isArrowBoxEverClicked ==false){
+			isArrowBoxEverClicked = true;
+			$(this).removeClass("arrow-next-big")
+
+		}
 		nowStageBefore = nowStage;
 		nowStage = nowStage + 1;
 		if(nowStage>1 && nowStage<41){

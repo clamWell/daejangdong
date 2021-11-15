@@ -381,7 +381,7 @@ b.green-highlight { background: #00ff1d; display: inline;  }
 #S01_01 img { width: 800px; margin: 0 auto; display: block;border-radius: 20px; }
 
 #S01_02 {}
-#S01_02 img { width: 600px; margin: 0 auto; display: block; }
+#S01_02 img { width: 1200px; margin: 0 auto; display: block; }
 
 #S03_01 {}
 #S03_01 img { margin: 0 auto; display: block;}
@@ -409,6 +409,7 @@ b.green-highlight { background: #00ff1d; display: inline;  }
 /* .stage-navigator ul::after { clear:both; content:""; display: block; } */
 .stage-navigator ul li.on { color:#fff;cursor: default; pointer-events: none; }
 .stage-navigator ul.block li { pointer-events: none; cursor: auto;  }
+.stage-navigator ul li:hover { color:#fff;}
 
 .cover { position:absolute;top:0; left:0;width:100%;height:100%;    z-index: 3;  }
 .introduction { position:absolute; top:0; left:0;  background: rgba(245,245,245,0.9);background: rgba(0,21,2,0.8); width:100%;height:100%;  }
@@ -416,7 +417,7 @@ b.green-highlight { background: #00ff1d; display: inline;  }
 .introduction .desc p { text-align: center; color: #003606; color:#fff;line-height: 1.8;font-weight: bold;font-size: 24px;font-weight: 300;}
 .introduction .desc button {  position:relative; cursor: pointer;  display:block; text-align: center; width: 300px; border: none;     color: #c1cdc3;background: #023f09; border-radius: 5px;margin: 30px auto; box-sizing: border-box; padding: 20px;font-family: 'Noto Sans KR';font-weight: bold; font-size: 20px; }
 .btn-effect::after {content: '';position: absolute;top: 0;left: 0;width: 100%;height: 100%; border-radius: 5px;  z-index: 1;opacity: 0;transition: all 0.3s;border: 2px solid #99b09c; transform: scale(1.2,1.2);box-sizing: border-box; }
-.btn-effect:hover { box-shadow: 3px 3px 15px rgba(0,0,0,0.1);  color:#fff; }
+.btn-effect:hover { box-shadow: 3px 3px 15px rgba(0,0,0,0.1);  color:#fff; box-shadow: 3px 3px 8px rgb(33 50 38 / 10%);}
 
 .text-area { width:50%; left:50%; box-sizing:border-box; min-height:100vh; position: relative;  z-index: 2; }
 .text-area .stage-list {width: 100%; position: relative; height: 100%; box-sizing: border-box; padding: 30px;padding-left:50px;padding-right: 50px; }
@@ -446,12 +447,14 @@ b.green-highlight { background: #00ff1d; display: inline;  }
 .arrow-holder{ position: absolute;width: 100%; bottom:0;z-index: 3;}
 .arrow-prev { position: absolute; bottom:50px; left:50px; }
 .arrow-next { position: absolute; bottom:50px; right:50px; }
-.arrow-box {    background: #023f09; background: #111; box-sizing: border-box; z-index: 1; padding: 20px; cursor:pointer; border-radius: 50%;}
-.arrow-box p { font-size: 16px; color: #fff;  font-weight: 500;}
+.arrow-box { transition:all 0.7s ease 0s; background: #023f09; background: #111; box-sizing: border-box; z-index: 1; padding: 20px; cursor:pointer; border-radius: 50%; width: 70px; height: 70px;}
+.arrow-box p { font-size: 16px; color: #fff;  font-weight: 500;text-align: center;}
 .arrow-box.btn-effect::after {  border-radius: 50%; transform: scale(1.3,1.3); border: 2px solid #023f09;}
 .arrow-down {position: absolute; right: 50px; bottom: 50px;display:none; cursor:pointer;}
 .arrow-down .going-down {  margin-top: 0; width: 100px; height: 100px; box-sizing: border-box; padding: 20px; background: #f0f0f0;}
 .btn-effect:hover::after {opacity: 1;transform: scale(1,1);}
+.arrow-next-big {  width: 150px;  height: 150px;}
+.arrow-next-big p { font-size: 30px;  line-height: 100px;text-align: center;}
 
 .border-div { position: absolute; z-index: 4;transition:all 0.7s ease 0s; }
 .border-left { width: 20px; height:100%; background: #023f09; top:0;bottom:0;left:0;left: -20px;}
