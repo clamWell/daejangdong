@@ -180,15 +180,19 @@ width: 27px; height: 30px;}
 .pc-share .share_bx > .share_fb {width: 25px; margin: 7px 7px;}
 .pc-share .share_bx > .share_tw {width: 40px; margin: 7px 7px;}
 
-
+.title-split { width:100%;   max-width: 600px;margin: 0 auto;}
+.title-split p { display:inline-block;text-align:center;  position: relative;  top: -50px; opacity: 0; }
+.title-split p img { height:125px; }
+.title-merge { max-width: 1000px; }
+.title-merge .line { text-align: center;  display: inline; } 
 
 .story-header {background: #216929; width: 100%;overflow: hidden;  box-sizing: border-box; padding: 40px 0;}
-.story-top-graphic{ width:100%; height: 877px;}
+.story-top-graphic{ width:100%; height: 800px;}
 .story-top-graphic-inside {width: 80%; height: 100%; margin-left: 20%;}
 .story-title-box {  position: absolute;width: 100%;top: 450px;}
 .story-title-box > h1 { display:none; text-indent: -99999999px; }
 .story-title-box .main-title {margin: 0 auto; display: block;}
-.story-title-box .sub-title {margin: 30px auto; display: block;}
+.story-title-box .sub-title {margin: 30px auto; display: block; opacity:0; position: relative; top:-30px;}
 
 /* .story-top-graphic .change-color {animation: changeColor 10s linear infinite;  display: block;}
 .title-back {width: 85%; left: 47.2%;top: 230px;  margin-left: -300px;}
@@ -204,23 +208,24 @@ width: 27px; height: 30px;}
 .big-crain {right:-150px; width: 570px; top:-2px;}
 .air-plane {left:60%; top: 190px;} */
 
+.story-top-graphic-inside {  position: relative;  width: 1200px; height: 100%; left: 50%; margin-left: -600px;opacity:0.8; transition:all 2s cubic-bezier(0.37,0.01,0.55,0.99) 0s; }
+.story-top-graphic-inside.load-before { opacity:0.3; filter: blur(5px); -webkit-filter: blur(5px);  transform: scale(2); }
 .story-top-graphic .change-color {animation: changeColor 10s linear infinite;  display: block;}
-.title-back {left: 47.2%;top: 230px;  margin-left: -300px;}
+.title-back {left: 50%;top: 230px;  margin-left: -300px;}
 .title-image {position:absolute;}
 .circle-wrap {margin-left: -300px;}
-/* .circle-back{left:60%;}
-.circle-front { top: -30px; right:85px; }
-.handshake {top: -50px; right: 190px; } */
 
-.hyena {margin-left: 0px; right:300px; top: 270px;}
-.apartment-front { top: 180px; margin-left: 0px; right:20px; }
-.small-crain {margin-left: 0px; top: 220px; left: 490px;}
-.big-crain {right:-150px; top:-2px;}
-.air-plane {left:60%; top: 190px;}
+.hyena {margin-left: 0px; right:-100px; top: 270px;}
+.hyena img { position: relative; top:0;left:0;animation: hyena 5s cubic-bezier(0.37,0.01,0.55,0.99) infinite;}
+.apartment-front { top: 175px; width: 500px; left:50%; margin-left: 400px; }
+.small-crain { top: 293px; left: 50%;margin-left: -197px;}
+.big-crain {right:-470px; top:-45px; transform: rotate(5deg);transform-origin: center bottom; animation: crainRotate 4s cubic-bezier(0.37,0.01,0.55,0.99) infinite;}
+.air-plane {  top: 280px; left: 750px;}
+.air-plane img { position: relative; top:0;left:0;animation: airplane 14s cubic-bezier(0.37,0.01,0.55,0.99) infinite;}
+
 
 .title-total { display:none; } 
-.story-top-graphic-inside {  position: relative;  width: 1200px; height: 100%; left: 50%; margin-left: -550px;}
-.hand-shake-group { overflow:hidden; width: 800px; height:600px;  right: 100px; top: -100px; position: absolute; }
+.hand-shake-group { overflow:hidden; width: 800px; height:600px;  right: 100px; top: -70px; position: absolute; }
 .hand-shake-group .circle-back {position: relative; top:0; left:0;}
 .hand-shake-group .handshake {top:0; left:0;animation: handshake 4s cubic-bezier(0.37,0.01,0.55,0.99) infinite;} 
 .hand-shake-group .circle-front {top:0; left:0;} 
@@ -229,6 +234,31 @@ width: 27px; height: 30px;}
 	0%{ filter: hue-rotate(0deg); }
 	50%{ filter: hue-rotate(90deg);}
 	100%{ filter: hue-rotate(0deg);}
+}
+
+@keyframes airplane{
+	0%{ top:0;left:0; transform: rotate(0deg); }
+	30%{ top:0;left:0; transform: rotate(0deg); }
+	75%{  top:-120px;left:-1300px; transform: rotate(-20deg);}
+	100%{   top:-120px;left:-1300px; transform: rotate(-20deg);}
+}
+
+
+@keyframes crainRotate{
+	0%{ transform: rotate(5deg); }
+	25%{ transform: rotate(5deg); }
+	50%{ transform: rotate(10deg);}
+	75%{ transform: rotate(5deg);}
+	100%{ transform: rotate(5deg);}
+}
+
+
+@keyframes hyena{
+	0%{ top:0;left:0; transform: rotate(0deg);}
+	25%{ top:0;left:0; transform: rotate(0deg);}
+	50%{ top:0;left:-50px;transform: rotate(3deg);}
+	75%{ top:0;left:0;transform: rotate(0deg);}
+	100%{ top:0;left:0;transform: rotate(0deg);}
 }
 
 @keyframes handshake{
@@ -240,6 +270,74 @@ width: 27px; height: 30px;}
 	50%{ top:0;}
 	100%{ top:0;}
 }
+
+/** money rain 라이브러리 **/
+
+.story-top-graphic-money-rain { position: absolute; top:-10px; width: 1500px;  left: 50%; margin-left: -750px;}
+@-moz-keyframes drop{
+   from {top: -20px;}
+   to {top: 1000px; }
+}
+@-webkit-keyframes drop{
+   from {top: -20px;}
+   to {top: 1000px; }
+}      
+@-moz-keyframes bill{
+    0% { -moz-transform: rotate(-180deg) translate(0px, 0px) rotateX(-360deg) rotateY(-180deg); border-bottom-left-radius: 0px; border-top-left-radius: 0px;}
+    10% { border-bottom-right-radius: 0px; border-top-right-radius: 3px;}
+    15% { border-bottom-right-radius: 35px; border-bottom-left-radius: 0px; border-top-right-radius: 60px;}
+    50% { -moz-transform: rotate(180deg) translate(10px, 95px) rotateX(180deg) rotateY(180deg); border-bottom-left-radius: 50px;}
+    60% { border-top-left-radius: 60px; border-top-right-radius: 3px;}
+    70% { border-top-left-radius: 10px;}
+}
+
+@-webkit-keyframes bill{
+    0% { -webkit-transform: rotate(-180deg) translate(0px, 0px) rotateX(-360deg) rotateY(-180deg); border-bottom-left-radius: 0px; border-top-left-radius: 0px;}
+    10% { border-bottom-right-radius: 0px; border-top-right-radius: 3px;}
+    15% { border-bottom-right-radius: 35px; border-bottom-left-radius: 0px; border-top-right-radius: 60px;}
+    50% { -webkit-transform: rotate(180deg) translate(10px, 95px) rotateX(180deg) rotateY(180deg); border-bottom-left-radius: 50px;}
+    60% { border-top-left-radius: 60px; border-top-right-radius: 3px;}
+    70% { border-top-left-radius: 10px;}
+} 
+@-moz-keyframes flip{
+    0% { -moz-transform: rotateX(-180deg);}
+    100% { -moz-transform: rotateX(180deg);}
+}
+
+#money div {  position: absolute;  top: -40px;  -moz-animation-name: drop, bill; -moz-animation-iteration-count: infinite;  -moz-animation-direction: normal;   -moz-animation-timing-function: ease-in; -webkit-animation-name: drop, bill;  -webkit-animation-iteration-count: infinite;   -webkit-animation-direction: normal;   -webkit-animation-timing-function: ease-in;}
+.bill {  background-image:url("../img/money-papers-sm.jpg");  background-size: contain;  height: 22px; width: 50px;  position: absolute;   }
+.bill2 { background-image:url("../img/money-paper.jpg"); background-size: contain;  height: 22px;  width: 50px;}
+.bill.b1{ left: 40px; -moz-animation-duration: 12s;      -webkit-animation-duration: 12s;   }
+.bill.b2{ font-size: 1.8em;  left: 120px; -moz-animation-duration: 7s;    -webkit-animation-duration: 7s;   }
+.bill.b3{ left: 200px; -moz-animation-duration: 11s;  }
+.bill.b4{  left: 280px; -moz-animation-duration: 13s;   }
+.bill.b5{ left: 380px; -moz-animation-duration: 8s;   -webkit-animation-duration: 8s;   } 
+.bill.b6{ left: 480px;  -moz-animation-duration: 6s; -webkit-animation-duration: 6s;   }
+.bill.b7{ left: 580px;  -moz-animation-duration: 12s;  -webkit-animation-duration: 12s;   }
+.bill.b8{ left: 680px; -moz-animation-duration: 5s;  -webkit-animation-duration: 5s;   } 
+.bill.b9{left: 700px; -moz-animation-duration: 11s;  -webkit-animation-duration: 11s;   } 
+.bill.b10{ left: 720px;-moz-animation-duration: 7s;    -webkit-animation-duration: 7s;   }
+.bill.b11{ left: 740px; -moz-animation-duration: 15s;    -webkit-animation-duration: 15s;   }
+.bill.b12{ left: 750px; -moz-animation-duration: 12s;    -webkit-animation-duration: 12s;   }
+.bill.b13{ left: 800px; -moz-animation-duration: 6s;    -webkit-animation-duration: 6s;   }
+.bill.b14{  left: 840px; -moz-animation-duration: 12s;     -webkit-animation-duration: 12s;   }
+.bill.b15{ left: 980px; -moz-animation-duration: 5s;     -webkit-animation-duration: 5s;   } 
+.bill.b16{left: 1000px; -moz-animation-duration: 11s;    -webkit-animation-duration: 11s;   } 
+.bill.b17{ left: 1020px;-moz-animation-duration: 7s;   -webkit-animation-duration: 7s;   }
+.bill.b18{ left: 1040px;-moz-animation-duration: 15s;     -webkit-animation-duration: 15s;   }
+.bill.b19{ left: 1080px;  -moz-animation-duration: 22s;    -webkit-animation-duration: 22s;   }
+.bill.b20{ left: 1120px;-moz-animation-duration: 7s;    -webkit-animation-duration: 7s;    }
+.bill.b21{ left: 1180px;-moz-animation-duration: 12s;      -webkit-animation-duration: 12s;  }
+.bill.b22{ left: 1240px; -moz-animation-duration: 11s;    }
+.bill.b23{ left: 1280px;  -moz-animation-duration: 13s;   }
+.bill.b24{ left: 1320px; -moz-animation-duration: 6s; -webkit-animation-duration: 6s;    }
+.bill.b25{ left: 1380px; -moz-animation-duration: 5s;  -webkit-animation-duration: 5s;   }
+.bill.b26{ left: 1420px;-moz-animation-duration: 7s;    -webkit-animation-duration: 7s;  }
+.bill.b27{ left: 1480px;-moz-animation-duration: 15s;    -webkit-animation-duration: 15s; }
+.bill.b28{ left: 1550px; -moz-animation-duration: 12s;    -webkit-animation-duration: 12s; }
+
+
+/** money rain 라이브러리 **/
 
 .going-down {  z-index: 100;  position: relative; width: 160px; margin: 0px auto; margin-top: 50px;}
 .going-down span { display: block; text-align: center; color: #222; font-size: 13px;opacity: 0.8;letter-spacing: 0px; text-shadow: 0px 0px 1px #111;}

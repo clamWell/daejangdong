@@ -66,8 +66,8 @@ $(function(){
 
         }else{
 
-        }
-		makeStoryDefault()
+        }		
+		makeStoryDefault();
 	}
 
 
@@ -96,8 +96,21 @@ $(function(){
 	}
 
 	function introAnimation(){
-
+		var $introItem = $(".intro-fadeTo");
+		//$(".story-top-graphic .cover-shadow").animate({"opacity":"0.2"},2000);
+		$(".story-top-graphic-inside").removeClass("load-before");
+		window.setTimeout(function(){
+			for(o=0; o<$introItem.length;o++){
+				$introItem.eq(o).delay(o*200).animate({"opacity":"1", "top":"0px"}, 1000, "easeOutSine");
+				if(o == $introItem.length-1){
+					$(".story-title-box .sub-title").animate({"opacity":"1", "top":"0px"}, 1000, "easeOutSine");
+				}
+			};
+		}, 1000)
 	}
+
+
+
 
 	var tooltipPersonData = [
 	  {
