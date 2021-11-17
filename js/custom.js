@@ -12,8 +12,29 @@ var randomRange = function(n1, n2) {
 $(window).resize(function() {
 	screenWidth = $(window).width();
 	screenHeight = $(window).height();
+//	updateSVG();
 });
 
+/*
+function updateSVG() {
+    var svg = $("#TOTAL").first();
+    if (svg != undefined && svg.length > 0) {
+        var vb = svg.attr("viewBox");
+        if (typeof (vb) == "string") {
+            var c = vb.split(' ');
+            if (c.length >= 4) {
+                requestAnimationFrame(function () {
+                    var w = c[2];
+                    var h = c[3];
+                    var pw = svg.parent().width();
+                    svg.width(pw);
+                    svg.height(pw*w/h);
+                });
+            }
+        }
+    }
+}
+*/
 
 /******** 모바일 전용 조정 ********/
 var svgMinimizeValue;
@@ -22,6 +43,8 @@ if(isMobile==true){
 
 	svgMinimizeValue = screenWidth/791;
 	console.log(svgMinimizeValue);
+
+	$(".arrow-next").removeClass("arrow-next-big");
 }else{
 
 }
@@ -241,7 +264,8 @@ $(function(){
 		nowStoryMode = false;
 		$(".storytelling-area").find(".fixed-area").removeClass("fixed");
 		$(".storytelling-area").find(".fixed-area").removeClass("fixed-bottom");
-		$(".interactive-header").removeClass("storyMode");        $(".border-div").removeClass("border-show");
+		$(".interactive-header").removeClass("storyMode"); 
+		$(".border-div").removeClass("border-show");
         $(".cover").fadeIn();
 
 
@@ -492,7 +516,7 @@ $(function(){
 			$(this).removeClass("up");
 		}else{
 			isTextAreaClosed = true;
-			$(".each-stage .story-area").animate({"max-height":"25px"}, 800);
+			$(".each-stage .story-area").animate({"max-height":"30px"}, 800);
 			$(this).addClass("up");
 		}
 
@@ -513,6 +537,7 @@ $(function(){
 			$(".svg-area").addClass("start");
 			$(".arrow-next").fadeIn();
 			$(".stage-navigator ul").removeClass("block");
+			$(".desc").hide();
 		});
 	});
 
@@ -559,7 +584,7 @@ $(function(){
 					$("#line03").hide();
 					$("#p-g1-09").show();  
 					if(isMobile==true){
-					
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,-50px)"});
 					}else{
 						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,20px)"});
 					}
@@ -595,7 +620,11 @@ $(function(){
 				break;
 			case 3:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,-50px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,-100px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,-50px)"});
+					}
 					$("#busan").show();
 					$("#line05-01").hide();
 					$("#line05-02").hide();
@@ -609,7 +638,13 @@ $(function(){
 					$("#line05-03").show();
 					$("#p-g1-08 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,-50px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,-100px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,-50px)"});
+					}
+
+
 					$("#gwangju_1_").hide();
 					$("#line01").hide();
 					$("#line02").hide();
@@ -628,7 +663,13 @@ $(function(){
 				if(reverse){ // 5>4
 					$("#p-g2-04").hide();
 				}else{ // 3>4
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,150px)"});
+					if(isMobile==true){
+						var moveP = 150*svgMinimizeValue;
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,"+moveP+"px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,150px)"});
+					}
+
 
 					$("#p-g1-08 ellipse").css({"stroke":"inherit"});
 					$("#line05-01").hide();
@@ -661,6 +702,7 @@ $(function(){
 					$("#b-01").hide();
 					$("#b-03").show();
 					$("#p-g2-04").css({"opacity":"0.2", "transform":"translate(30px, 0px)"});
+
 				}
 				break;
 			case 7:
@@ -675,8 +717,14 @@ $(function(){
 				}
 				break;
 			case 8:
-				if(reverse){ // 9>0
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,150px)"});
+				if(reverse){ 
+					if(isMobile==true){
+						var moveP = 150*svgMinimizeValue;
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,"+moveP+"px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,150px)"});
+					}
+
 					$("#p-g1-01").css({"opacity":"1.0"});
 					$("#p-g1-02").css({"opacity":"1.0"});
 					$("#p-g1-03").css({"opacity":"1.0"});
@@ -692,7 +740,11 @@ $(function(){
 				break;
 			case 9:
 				if(reverse){ // 10>9
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, 50px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,-50px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, 50px)"});
+					}
 
 					$("#p-g1-01").show();
 					$("#p-g1-02").show();
@@ -704,7 +756,12 @@ $(function(){
 					$("#p-g1-10").hide();
 					$("#line06").hide();
 				}else{ // 8>9
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, 50px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,-50px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, 50px)"});
+					}
+
 					$("#p-g2-03 ellipse").css({"stroke":"inherit"});
 					$("#p-g1-06 ellipse").css({"stroke":"inherit"});
 					$("#p-g1-01").css({"opacity":"0.2"});
@@ -724,7 +781,13 @@ $(function(){
 					$("#line06-03").hide();
 
 				}else{ // 9>10
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, -20px)"});
+
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,-100px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, -20px)"});
+					}
+
 					$("#p-g1-01").hide();
 					$("#p-g1-02").hide();
 					$("#p-g1-03").hide();
@@ -754,7 +817,12 @@ $(function(){
 				break;
 			case 12:
 				if(reverse){ // 13>12
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, -20px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(0px,-100px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px, -20px)"});
+					}
+
 
 					$("#p-g3-02").css({"opacity":"1.0"});
 
@@ -802,7 +870,12 @@ $(function(){
 					$("#line10-02").show();
 
 				}else{ // 12>13
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(60px, 200px)"});
+					if(isMobile==true){
+						var moveP = 150*svgMinimizeValue;
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.35) translate(0px,"+moveP+"px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(60px, 200px)"});
+					}
 
 					$("#b-02").hide();
 					$("#b-02-title-01").hide();
@@ -869,7 +942,11 @@ $(function(){
 				break;
 			case 16:
 				if(reverse){ // 17>16
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.2) translate(-50px, 70px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.35) translate(-60px,40px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.2) translate(-50px, 70px)"});
+					}
 
 					$("#line09-03").show();
 					$("#p-g3-02").show();
@@ -880,7 +957,13 @@ $(function(){
 					$("#a-03").hide();
 
 				}else{ // 15>16
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.2) translate(-50px, 70px)"});
+					
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.35) translate(-60px,40px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.2) translate(-50px, 70px)"});
+					}
+
 					$("#line11").hide();	
 					$("#line12-02").show();
 
@@ -890,7 +973,11 @@ $(function(){
 				break;
 			case 17: //chapter 5 시작
 				if(reverse){ // 18>17
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px, 50px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(-45px,-50px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px, 50px)"});
+					}
 
 					$("#p-g1-11").hide();
 					$("#line09-01").hide();
@@ -900,8 +987,11 @@ $(function(){
 					$("#p-g3-01").css({"transform":"translate(0px, -60px)"});
 
 				}else{ // 16>17
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px, 50px)"});
-
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(-45px,-50px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px, 50px)"});
+					}
 					$("#line09-03").hide();
 					$("#p-g3-02").hide();
 					$("#line12-02").hide();
@@ -950,7 +1040,12 @@ $(function(){
 					$("#line14").show();
 
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, 150px)"});
+					if(isMobile==true){
+						var moveP = 150*svgMinimizeValue;
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,50px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, 150px)"});
+					}
 
 					$("#b-02-title-02").hide();
 					
@@ -967,7 +1062,13 @@ $(function(){
 
 			case 20:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, 150px)"});
+					if(isMobile==true){
+						var moveP = 150*svgMinimizeValue;
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,50px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px, 150px)"});
+					}
+
 					$("#p-g2-02").css({"transform":"translate(-10px, 0px)"});
 					$("#b-07").show();
 					$("#line47").show();
@@ -984,13 +1085,23 @@ $(function(){
 
 			case 21: //chapter 6 시작
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.25)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1)"});
+					}
+
 
 					$("#a-06").hide();
 					$("#a-07").hide();
 
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.25)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1)"});
+					}
+
 					$("#line47").hide();
 					$("#line14").hide();
 					$("#line17").hide();
@@ -1008,7 +1119,12 @@ $(function(){
 					$("#a-08").hide();
 
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-50px,100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-100px,0px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-50px,100px)"});
+					}
+
 
 					$("#a-06").show();
 					$("#a-07").show();
@@ -1030,12 +1146,24 @@ $(function(){
 				break;
 			case 24:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-50px,100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-50px,0px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-50px,100px)"});	
+					}
+
+					
 					$("#p-g2-07 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 					$("#p-g1-10 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 					$("#b06-text-01").hide();
 				
 				}else{
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-50px,0px)"});
+					}else{
+						
+					}
+
 					$("#p-g2-07 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 					$("#p-g1-10 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 
@@ -1044,12 +1172,22 @@ $(function(){
 				break;
 			case 25:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-100px,30px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
+					}
+
 					$("#line19").hide();
-					$("#b-05").find(".st62").show();
+					//$("#b-05").find(".st62").show();
+					$("#b-05 .st62").show();
 	
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-100px,30px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
+					}
 
 					$("#p-g2-07 ellipse").css({"stroke":"inherit", "stroke-width":"3px"});
 					$("#p-g1-10 ellipse").css({"stroke":"#dac776", "stroke-width":"3px"});
@@ -1059,22 +1197,37 @@ $(function(){
 				break;
 			case 26:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-20px,150px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-20px,30px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-20px,150px)"});
+					}
 					$("#line19").show();
 					$("#line18").hide();
 					$("#p-g2-06").show();
-					$("#b-05").find(".st62").hide();
+					//$("#b-05").find(".st62").hide();
+					$("#b-05 .st62").hide();
 		
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-20px,150px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-20px,30px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(-20px,150px)"});
+					}
+
 					$("#line19").show();
-					$("#b-05").find(".st62").hide();
+					//$("#b-05").find(".st62").hide();
+					$("#b-05 .st62").hide();
 
 				}
 				break;
 			case 27:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px,150px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,30px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px,150px)"});
+					}
 
 					$("#line18").show();
 
@@ -1083,17 +1236,27 @@ $(function(){
 					$("#p-g3-03").hide();
 	
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px,150px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,30px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(30px,150px)"});
+					}
+
 					$("#line19").hide();
 					$("#line18").show();
-					$("#b-05").find(".st62").show();
+					//$("#b-05").find(".st62").show();
+					$("#b-05 .st62").show();
 					$("#p-g2-06").hide(); // 황무성 삭제
 
 				}
 				break;
 			case 28:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(30px,-120px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-60px,-120px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(30px,-120px)"});
+					}
 
 					$("#b06-text-01").show();
 					$("#line24-2").show();
@@ -1119,7 +1282,12 @@ $(function(){
 					$("#p-g3-01").css({"transform":"translate(0px, 18px)"});
 
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(30px,-120px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-60px,-120px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(30px,-120px)"});
+					}
+
 					$("#line18").hide();
 
 					$("#p-g4-01").show();
@@ -1169,7 +1337,11 @@ $(function(){
 
 			case 30: 
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-60px,-120px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-100px)"});
+					}
 
 					$("#line21-01").show();
 					$("#line21-03").show();
@@ -1181,7 +1353,12 @@ $(function(){
 					$("#a-11").hide();
 	
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-60px,-120px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-100px)"});
+					}
+
 
 					$("#line21-01").show();
 					$("#line21-03").show();
@@ -1205,7 +1382,12 @@ $(function(){
 					$("#line29").hide();
 	
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,-100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(20px,-100px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,-100px)"});
+					}
+
 
 					$("#line21-01").hide();
 					$("#line21-03").hide();
@@ -1220,13 +1402,22 @@ $(function(){
 
 			case 32: 
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,-100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.7) translate(-26px, -160px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,-100px)"});
+					}
 					$("#p-g3-02").css({"opacity":"0.2"});
 					$("#p-g3-02").hide();
 					$("#line39").hide();	
 	
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,-100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.7) translate(-26px, -160px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,-100px)"});
+					}
+
 
 					$("#p-g1-01").hide();
 					$("#line27").hide();
@@ -1246,7 +1437,11 @@ $(function(){
 
 			case 33: 
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,-100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-120px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,-100px)"});
+					}
 					$("#line39").show();
 
 					$("#p-g3-08").hide();
@@ -1257,7 +1452,12 @@ $(function(){
 					$("#p-g2-01 ellipse.st67").css({"stroke":"inherit"});
 	
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,-100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px,-120px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,-100px)"});
+					}
+
 					$("#p-g3-02").css({"opacity":"1", "transform":"translate(0px,-10px)"});
 					$("#p-g3-02").show();
 					$("#line39").show();
@@ -1267,11 +1467,20 @@ $(function(){
 
 			case 34: //권순일 등장
 				if(reverse){ 
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(15px,-65px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
+					}
 	
 				}else{
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(15px,-65px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
+					}
+
 					
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(100px,0px)"});
 					$("#line39").hide();
 					$("#p-g3-08").show();
 					$("#line38").show();
@@ -1296,7 +1505,11 @@ $(function(){
 
 			case 36: 
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(70px,70px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-5px,0px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(70px,70px)"});
+					}
 					$("#p-g1-10 ellipse").css({"stroke":"#dac776", "stroke-width":"3px"});
 					$("#p-g3-03 ellipse").css({"stroke":"#111","stroke-width":"1px"});
 					$("#p-g2-01 ellipse").css({"stroke":"inherit","stroke-width":"1px"});
@@ -1312,7 +1525,12 @@ $(function(){
 					$("#p-g2-02 ellipse").css({"stroke":"inherit","stroke-width":"1px"});
 					$("#p-g1-06 ellipse").css({"stroke":"#dac776", "stroke-width":"3px"});
 				}else{ //권순일
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(70px,70px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-5px,0px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(70px,70px)"});
+					}
+
 					$("#line40").show();
 					$("#line37").show();
 					$("#line38").hide();
@@ -1324,7 +1542,11 @@ $(function(){
 
 			case 37: //chapter 8 시작 
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(20px,70px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.6) translate(-50px,-10px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(20px,70px)"});
+					}
 
 					$("#p-g1-07").css({"opacity":"0.2", "transform":"translate(0px,0px)"});
 					$("#p-g1-07").hide();
@@ -1332,7 +1554,12 @@ $(function(){
 					$(".p-record ellipse").css({"stroke":"#111", "stroke-width":"3px"});
 	
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(20px,70px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.6) translate(-50px,-10px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.3) translate(20px,70px)"});
+					}
+
 					$("#p-g1-10 ellipse").css({"stroke":"#dac776", "stroke-width":"3px"});
 					$("#p-g3-03 ellipse").css({"stroke":"#111","stroke-width":"1px"});
 					$("#p-g2-01 ellipse").css({"stroke":"inherit","stroke-width":"1px"});
@@ -1350,7 +1577,11 @@ $(function(){
 
 			case 38:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,0px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.6) translate(-50px,-40px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,0px)"});
+					}
 					$("#p-g1-07").show();
 					$("#line46").show();
 
@@ -1358,7 +1589,12 @@ $(function(){
 					$("#line32-02").hide();
 	
 				}else{//김용철 소송
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,0px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.6) translate(-50px,-40px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,0px)"});
+					}
+
 					$("#p-g1-06 ellipse").css({"stroke":"#dac776"});
 					$("#p-g2-02 ellipse").css({"stroke":"inherit"});
 					$("#p-g1-10 ellipse").css({"stroke":"#dac776"});
@@ -1372,13 +1608,22 @@ $(function(){
 
 			case 39:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.6) translate(-50px,-20px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,100px)"});
+					}
 					$("#line32-01").show();
 					$("#line32-02").show();
 
 					$("#line31").hide();
 				}else{//정재창 협박
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.6) translate(-50px,-20px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(50px,100px)"});
+					}
+
 					$("#p-g1-07").hide();
 					$("#line46").hide();
 
@@ -1389,14 +1634,23 @@ $(function(){
 
 			case 40:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-10px,0px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,100px)"});
+					}
 					$("#line31").show();
 
 					$("#line45").hide();
 					$("#a-09-title-02").show(); 
 					$("#a-09-title-03").hide(); 
 				}else{//노래방
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-10px,0px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(100px,100px)"});
+					}
+
 					$("#line32-01").hide();
 					$("#line32-02").hide();
 					$("#line31").show();
@@ -1407,7 +1661,12 @@ $(function(){
 				if(reverse){
 	
 				}else{//배당금, 마무리
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(0px,0px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1) translate(0px,30px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.1) translate(0px,0px)"});
+					}
+
 					$("#line31").hide();
 
 					$("#line45").show();
