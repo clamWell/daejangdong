@@ -16,8 +16,12 @@ $(window).resize(function() {
 
 
 /******** 모바일 전용 조정 ********/
+var svgMinimizeValue;
 if(isMobile==true){
 	$(".interactive-header .page-title").html("대장지구를 둘러싼 10년의 시간");
+
+	svgMinimizeValue = screenWidth/791;
+	console.log(svgMinimizeValue);
 }else{
 
 }
@@ -479,9 +483,19 @@ $(function(){
 
 
 	/// 모바일에서 토글 버튼 클릭하면
+	var isTextAreaClosed = false; 
 	$(".mobile-text-toggle").on("click", function(e){
 		e.preventDefault()
-		$(".each-stage .story-area").animate({"height":"25px"}, 500);
+		if( isTextAreaClosed == true){
+			isTextAreaClosed = false;
+			$(".each-stage .story-area").animate({"max-height":"300px"}, 800);
+			$(this).removeClass("up");
+		}else{
+			isTextAreaClosed = true;
+			$(".each-stage .story-area").animate({"max-height":"25px"}, 800);
+			$(this).addClass("up");
+		}
+
 		
 	});
 
@@ -544,8 +558,12 @@ $(function(){
 				if(reverse){
 					$("#line03").hide();
 					$("#p-g1-09").show();  
-
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,20px)"});
+					if(isMobile==true){
+					
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,20px)"});
+					}
+					
 					$("#gwangju_1_").show();
 					$("#line01").show();
 					$("#line02").show();
