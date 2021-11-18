@@ -1128,6 +1128,7 @@ $(function(){
 					$(".person-ch ellipse").css({"stroke":"inherit", "stroke-width":"inherit"});
 
 					$("#line24-2").hide();
+					$("#line50").hide();
 					$("#a-08").hide();
 
 				}else{
@@ -1146,13 +1147,16 @@ $(function(){
 			case 23:
 				if(reverse){
 					$("#p-g2-07 ellipse").css({"stroke":"inherit"});
-					$("#p-g1-10 ellipse").css({"stroke-width":"2px"});
+					$("#p-g1-10 ellipse").css({"stroke":"#dac776","stroke-width":"4px"});
+					$("#line49").hide();
+					$("#line50").fadeIn();
 
 				}else{
 					$("#a-08").show();
 					
 					$("#line24-2").show();
-					$(".person-ch ellipse").css({"stroke":"#dac776", "stroke-width":"2px"});
+					$(".person-ch ellipse").css({"stroke":"#dac776", "stroke-width":"4px"});
+					$("#line50").fadeIn();
 
 				}
 				break;
@@ -1165,9 +1169,10 @@ $(function(){
 					}
 
 					
-					$("#p-g2-07 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
-					$("#p-g1-10 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
+					$("#p-g2-07 ellipse").css({"stroke":"#0bff0c", "stroke-width":"3px"});
+					$("#p-g1-10 ellipse").css({"stroke":"#0bff0c", "stroke-width":"3px"});
 					$("#b06-text-01").hide();
+					$("#line49").fadeIn();
 				
 				}else{
 					if(isMobile==true){
@@ -1175,9 +1180,10 @@ $(function(){
 					}else{
 						
 					}
-
-					$("#p-g2-07 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
-					$("#p-g1-10 ellipse").css({"stroke":"#111", "stroke-width":"3px"});
+					$("#line50").hide();
+					$("#line49").fadeIn();
+					$("#p-g2-07 ellipse").css({"stroke":"#0bff0c", "stroke-width":"3px"});
+					$("#p-g1-10 ellipse").css({"stroke":"#0bff0c", "stroke-width":"3px"});
 
 
 				}
@@ -1189,7 +1195,8 @@ $(function(){
 					}else{
 						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
 					}
-
+					
+					
 					$("#line19").hide();
 					//$("#b-05").find(".st62").show();
 					$("#b-05 .st62").show();
@@ -1200,7 +1207,7 @@ $(function(){
 					}else{
 						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-70px,180px)"});
 					}
-
+					$("#line49").hide();
 					$("#p-g2-07 ellipse").css({"stroke":"inherit", "stroke-width":"3px"});
 					$("#p-g1-10 ellipse").css({"stroke":"#dac776", "stroke-width":"3px"});
 					$("#b06-text-01").show();
