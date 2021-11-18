@@ -45,6 +45,8 @@ if(isMobile==true){
 	console.log(svgMinimizeValue);
 
 	$(".arrow-next").removeClass("arrow-next-big");
+
+	$("#S03_01 img").attr("src", "https://img.khan.co.kr/spko/storytelling/2021/daejang/photo-cartel-m.png")
 }else{
 
 }
@@ -55,15 +57,24 @@ $(function(){
 
 
 	$(".close-ie-block").on("click", function(){
-		$(".ie-block-9").hide();
+		$(".ie-block").hide();
 	})
 
     var ieUnder = false;
+	var isIe =false;
     function checkIe(){
         var word;
-        if (navigator.userAgent.indexOf("MSIE") >= 0) {
-            console.log("ieUNDER 10");
-            ieUnder = true;
+		var agent = navigator.userAgent.toLowerCase(); 
+        if (  (navigator.appName === 'Netscape' && navigator.userAgent.search('Trident') !== -1)|| (agent.indexOf("msie") !== -1)) {
+			if (navigator.userAgent.indexOf("MSIE") >= 0) { 
+				isIe = true;
+				ieUnder = true;
+				$(".ie-block-9").show(); 
+			}else{
+				console.log("ie");
+				isIe = true;
+				$(".ie-block-allie").show(); 
+			}
             return true;
         }else {
             return false;
@@ -221,7 +232,7 @@ $(function(){
 		$(".tooltip .tooltip-wrap .col-2 .info ul li span.birth").html(_data.birth);
 		$(".tooltip .tooltip-wrap .col-2 .info ul li span.occu").html(_data.occu);
 		$(".tooltip .tooltip-wrap .col-2 .info ul li span.position_now").html(_data.position);
-		$(".tooltip .tooltip-wrap .col-2 .thumbs img").attr("src", "img/"+_data.code+".jpg")
+		$(".tooltip .tooltip-wrap .col-2 .thumbs img").attr("src", "https://img.khan.co.kr/spko/storytelling/2021/daejang/"+_data.code+".jpg")
 
 		showTooltip();
 	}
@@ -299,16 +310,16 @@ $(function(){
 		$(".svg-holder").addClass("chapter1");
 		$("#b-02").show();
 		$("#b-02-title-01").show();
-		//$("#gwangju_1_").show();
+		$("#gwangju_1_").show();
 		$("#p-g1-01").show();
 		$("#p-g1-02").show();
-		//$("#p-g1-03").show();
-		//$("#p-g1-04").show();
+
 		$("#p-g1-05").show();
 		$("#p-g1-06").show();
-		//$("#p-g1-07").show();
-		//$("#p-g1-08").show();
-		//$("#p-g1-09").show();
+
+		$("#p-g1-03").show();
+		$("#p-g1-07").show();
+		$("#p-g1-08").show();
 
 
 
@@ -473,6 +484,8 @@ $(function(){
         adjustBottomProgress(nowStage);
 		if(nowStage<=1){
 			$(".arrow-prev").hide();
+			$(".arrow-next").show();
+			$(".arrow-down").hide();
 		}else if(nowStage>1 && nowStage<41){
 			$(".arrow-prev").fadeIn();
 			$(".arrow-next").show();
@@ -566,18 +579,14 @@ $(function(){
 			case 1: //case1은 reverse 케이스 밖에 없음
 				// 화살표
 				$("#line01").hide();
-				$("#line02").hide();
+				//$("#line02").hide();
 				$("#line03").hide();
 				$("#line03-02").hide();
-				$("#p-g1-08").hide();
-				$("#gwangju_1_").hide();
-				$(".gwangju_text").hide();
 
 				// 사람
 				$("#p-g1-09").hide();
-				$("#p-g1-07").hide();
 				$("#p-g1-04").hide();
-				$("#p-g1-03").hide();
+
 				break;
 			case 2:
 				if(reverse){
@@ -589,9 +598,9 @@ $(function(){
 						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.5) translate(0px,20px)"});
 					}
 					
+				//	$("#line01").show();
+				//	$("#line02").show();
 					$("#gwangju_1_").show();
-					$("#line01").show();
-					$("#line02").show();
 					$("#line03").show();
 					$("#line03-02").show();
 
@@ -602,20 +611,14 @@ $(function(){
 					$("#line05-03").hide();
 					$(".st39 st40 st41").hide();
 				}else{
-					$("#gwangju_1_").show();
-					$("#p-g1-03").show();
-					$("#p-g1-07").show();
-
-					$("#line01").fadeIn();
-					$("#line02").fadeIn();
-					$("#p-g1-08").show();
-
+					
+					//$("#line01").fadeIn();
+					//$("#line02").fadeIn();
+					
 					$("#line03").fadeIn();
 					$("#line03-02").fadeIn();
 					$("#p-g1-09").show();
 					$("#p-g1-04").show();
-
-					
 				}
 				break;
 			case 3:
@@ -646,8 +649,8 @@ $(function(){
 
 
 					$("#gwangju_1_").hide();
-					$("#line01").hide();
-					$("#line02").hide();
+					//$("#line01").hide();
+					//$("#line02").hide();
 					$("#line03").hide();
 					$("#line03-02").hide();
 
@@ -912,7 +915,7 @@ $(function(){
 				}else{
 					$("#b-05").show();
 					$("#b-03").hide();
-					$("#b-03-02").show();
+					//$("#b-03-02").show();
 					$("#b-03-title-2").hide();
 
 					$("#p-g2-04").css({"opacity":"1"});
@@ -1004,8 +1007,11 @@ $(function(){
 				break;
 			case 18:
 				if(reverse){
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px, -100px)"});
-					
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-30px, -80px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px, -30px)"});
+					}
 					$("#line14").hide();
 					$("#b-02-title-02").show();
 					
@@ -1019,7 +1025,13 @@ $(function(){
 
 
 				}else{
-					$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px, -100px)"});
+					if(isMobile==true){
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(-30px, -80px)"});
+					}else{
+						$(".svg-holder.chapter1 svg").css({"transform":"scale(1.4) translate(0px, -30px)"});
+					}
+
+
 					$("#line13").hide();
 
 					$("#p-g1-11").show();
@@ -1033,7 +1045,7 @@ $(function(){
 				break;
 			case 19:
 				if(reverse){
-					$("#b-03-02").show();
+					//$("#b-03-02").show();
 					$("#b-07").hide();
 					$("#p-g2-02").css({"transform":"translate(25px, 0px)"});
 					$("#line47").hide();
@@ -1076,7 +1088,7 @@ $(function(){
 				}else{
 
 					$("#line14").hide();
-					$("#b-03-02").hide();
+					//$("#b-03-02").hide();
 					$("#b-07").show();
 					$("#p-g2-02").css({"transform":"translate(-10px, 0px)"});
 					$("#line47").show();

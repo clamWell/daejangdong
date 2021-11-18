@@ -89,12 +89,13 @@ font-family: sans-serif; font-weight: bold;}
 ::-webkit-selection {background: #ff9c34; color: #111; text-shadow: none; }
 
 /*****IE 블락******/
-.ie-block {  z-index: 99999; width:100%; height:100vh; background:#111; background: rgba(21, 21, 21, 0.9);position:fixed; top:0;left:0;bottom:0;right:0;}
+.ie-block { display:none; z-index: 99999; width:100%; height:100vh; background:#111; background: rgba(21, 21, 21, 0.9);position:fixed; top:0;left:0;bottom:0;right:0;}
 .ie-block .alert-msg { position: absolute; background:#fff; box-sizing: border-box; padding: 25px; border-radius: 5px;
 box-shadow: 2px 2px 8px rgba(152, 153, 156, 0.2);width: 50%; left:25%; top: 50%; margin-top:-150px; }
 .ie-block .alert-msg p { margin-bottom:8px;  text-align: center; color: #454750;font-size: 20px; }
 .ie-block .alert-msg button {    display: block; width: 80%; margin: 0px auto;margin-top: 20px;
 box-sizing: border-box;  padding: 10px; background: #ececf1;  border-radius: 4px; color: #565661; font-weight: bold; font-size: 14px; cursor: pointer; border: 1px solid #dedee2; letter-spacing: -0.05em; }
+.ie-block-allie {}
 
 /* Header */
 .interactive-header { position: fixed;padding: 0px 10px;box-sizing: border-box;top: 0px; left: 0px; width: 100%; height: 45px; z-index: 100;
@@ -305,8 +306,8 @@ width: 27px; height: 30px;}
 }
 
 #money div {  position: absolute;  top: -40px;  -moz-animation-name: drop, bill; -moz-animation-iteration-count: infinite;  -moz-animation-direction: normal;   -moz-animation-timing-function: ease-in; -webkit-animation-name: drop, bill;  -webkit-animation-iteration-count: infinite;   -webkit-animation-direction: normal;   -webkit-animation-timing-function: ease-in;}
-.bill {  background-image:url("../img/money-papers-sm.jpg");  background-size: contain;  height: 22px; width: 50px;  position: absolute;   }
-.bill2 { background-image:url("../img/money-paper.jpg"); background-size: contain;  height: 22px;  width: 50px;}
+.bill {  background-image:url("https://img.khan.co.kr/spko/storytelling/2021/daejang/money-papers-sm.jpg");  background-size: contain;  height: 22px; width: 50px;  position: absolute;   }
+.bill2 { background-image:url("https://img.khan.co.kr/spko/storytelling/2021/daejang/money-paper.jpg"); background-size: contain;  height: 22px;  width: 50px;}
 .bill.b1{ left: 40px; -moz-animation-duration: 12s;      -webkit-animation-duration: 12s;   }
 .bill.b2{ font-size: 1.8em;  left: 120px; -moz-animation-duration: 7s;    -webkit-animation-duration: 7s;   }
 .bill.b3{ left: 200px; -moz-animation-duration: 11s;  }
@@ -837,6 +838,7 @@ font-family: 'Noto Sans KR', 'notokr-regular', 'Apple SD Gothic Neo','맑은 고
 .stage-info .stage-title {  font-size: 22px;}
 .each-story {  max-width: 90%; padding:20px; }
 .each-story > img { display:none;}
+.each-story p.caption { display:none;}
 .each-stage .story-area { top:0;}
 .each-stage .story-area .para { font-size: 17px;  margin: 12px 0;}
 
@@ -919,8 +921,8 @@ body.scrollOff{position:fixed;overflow:hidden;height:100%;}
 .introduction .desc button {width: 200px; font-size: 16px;}
 .introduction .btn-sample { padding: 1px 5px;background: #fff; color:#111; font-weight: bold;border-radius: 40%;font-size: 15px;}
 .introduction .year-btn-sample { padding: 1px 5px;font-size: 15px;}
-#S03_01 img {width:95%;}
-#S03_02 img {width:95%;}
+#S03_01 img {width:85%;}
+#S03_02 img { width: 150%; left: -25%; position: relative;}
 .intro .para-holder p.sm {font-size: 14px;}
 
 .border-show.border-top {top: 40px;}
