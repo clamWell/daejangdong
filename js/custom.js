@@ -1706,6 +1706,13 @@ $(function(){
 		var storyArea_pos = $(".storytelling-area").offset().top,
 			storyArea_end_pos = $(".storytelling-area").offset().top + $(".storytelling-area").height()-screenHeight;
 
+        $(".hideme").each(function(i){
+			if( $(this).hasClass("shown") == false && nowScroll + screenHeight > $(this).offset().top + $(this).outerHeight()*0.5 ){
+				$(this).addClass("shown")
+				$(this).stop().animate({"opacity":"1"},1000);
+			}
+		});
+
 		if( nowScroll >= storyArea_pos && nowScroll < storyArea_end_pos ){
 			if(!nowStoryMode){
 				activateStoryMode()
