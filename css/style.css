@@ -721,6 +721,7 @@ background-size: 15px 15px; padding-right: 20px;background-position: right;  cur
 .digital-list-wrap {/*  border-top: 1px solid #dbdbdb; */ }
 .digital-list { position: relative; z-index:2; padding-top: 0;}
 
+.hideme { opacity:0;} 
 
 .ref-box { max-width: 600px; margin: 50px auto;  box-sizing: border-box;border-radius: 5px;border: 1px solid #dadada;background: #fafafa;box-sizing: border-box;padding: 30px;line-height: 1.6; color: #999; font-size: 13px;}
 .ref-box h2 { color: #393939; font-size: 20px; font-weight: bold; text-align: center;}
@@ -970,7 +971,7 @@ body.scrollOff{position:fixed;overflow:hidden;height:100%;}
 .mobile-text-toggle { display:block;transition: all 0.5s ease-in-out 0s;position: absolute; 
 top: 0px; right: 0px; box-sizing:border-box; padding: 7.5px 10px; background: #d5d5d5; z-index: 111; cursor: pointer; }
 .mobile-text-toggle img { width:25px;display: block; margin: 0 auto; transition: all 0.5s ease-in-out 0s;}
-.mobile-text-toggle.up { width:100%; }
+.mobile-text-toggle.up { width:100%;height:100%; }
 .mobile-text-toggle.up img {transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); }
 
 .clickAble { cursor: default; }

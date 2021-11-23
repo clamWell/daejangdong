@@ -12,38 +12,28 @@ var randomRange = function(n1, n2) {
 $(window).resize(function() {
 	screenWidth = $(window).width();
 	screenHeight = $(window).height();
-//	updateSVG();
+   // if(isMobile){avoid100vh();}
 });
 
-/*
-function updateSVG() {
-    var svg = $("#TOTAL").first();
-    if (svg != undefined && svg.length > 0) {
-        var vb = svg.attr("viewBox");
-        if (typeof (vb) == "string") {
-            var c = vb.split(' ');
-            if (c.length >= 4) {
-                requestAnimationFrame(function () {
-                    var w = c[2];
-                    var h = c[3];
-                    var pw = svg.parent().width();
-                    svg.width(pw);
-                    svg.height(pw*w/h);
-                });
-            }
-        }
+function avoid100vh(){
+	$(".text-area .stage-list").height(screenHeight);
+    $(".storytelling-area").height(screenHeight*2.2);
+}
+var toggleTextarea = 50;
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+function isMobileSafari(){
+    if(isSafari == true){
+        toggleTextarea = 70;
     }
 }
-*/
+isMobileSafari();
+
 
 /******** 모바일 전용 조정 ********/
 var svgMinimizeValue;
 if(isMobile==true){
 	$(".interactive-header .page-title").html("대장지구를 둘러싼 10년의 시간");
-
 	svgMinimizeValue = screenWidth/791;
-	console.log(svgMinimizeValue);
-
 	$(".arrow-next").removeClass("arrow-next-big");
 
 	$("#S03_01 img").attr("src", "https://img.khan.co.kr/spko/storytelling/2021/daejang/photo-cartel-m.png")
@@ -71,7 +61,7 @@ $(function(){
 				ieUnder = true;
 				$(".ie-block-9").show(); 
 			}else{
-				console.log("ie");
+				
 				isIe = true;
 				$(".ie-block-allie").show(); 
 			}
@@ -203,8 +193,6 @@ $(function(){
 	];
 	$(".clickAble").on("click", function(){
 		var el_id = $(this).attr("data-tooltip-id");
-		//console.log(el_id);
-		//console.log(mouseX, mouseY)
 		makeTooltip(el_id);
 	});
 
@@ -252,11 +240,9 @@ $(function(){
 
 	var storyArea_pos = $(".storytelling-area").offset().top,
 		storyArea_end_pos = $(".storytelling-area").offset().top + $(".storytelling-area").height()-screenHeight;
-	console.log(storyArea_pos);
 
 	var nowStoryMode = false;
 	var activateStoryMode = function(){
-		console.log("스토리모드 가동");
 		nowStoryMode = true;
 
 		$(".storytelling-area").find(".fixed-area").addClass("fixed");
@@ -271,7 +257,6 @@ $(function(){
 	}
 
 	var cancelStoryMode = function(){
-		console.log("스토리모드 실행 취소");
 		nowStoryMode = false;
 		$(".storytelling-area").find(".fixed-area").removeClass("fixed");
 		$(".storytelling-area").find(".fixed-area").removeClass("fixed-bottom");
@@ -283,7 +268,6 @@ $(function(){
 	};
 
 	var endStoryMode = function(){
-		console.log("스토리모드 실행 끝");
 		nowStoryMode = false;
 		$(".storytelling-area").find(".fixed-area").removeClass("fixed");
 		$(".storytelling-area").find(".fixed-area").addClass("fixed-bottom");
@@ -505,12 +489,8 @@ $(function(){
 
 	function adjustTextBox(stage){
 		var stage = stage || 1;
-
-		console.log("스테이지: "+stage);
-
 		$(".each-story").hide();
 		if(isMobile==true){
-			//$(".each-story").eq(stage-1).fadeIn(300);
 			$(".each-story").eq(stage-1).show();
 		}else{
 			$(".each-story").eq(stage-1).fadeIn(700);
@@ -529,7 +509,7 @@ $(function(){
 			$(this).removeClass("up");
 		}else{
 			isTextAreaClosed = true;
-			$(".each-stage .story-area").animate({"max-height":"30px"}, 800);
+			$(".each-stage .story-area").animate({"max-height":toggleTextarea+"px"}, 800);
 			$(this).addClass("up");
 		}
 
@@ -568,12 +548,6 @@ $(function(){
 
 	function drawStage(n, n_before){
 		var reverse = (n - n_before>0)? false : true;
-
-		if(reverse){
-			console.log("이전스토리")
-		}else{
-			console.log("다음스토리")
-		}
 
 		switch (n){
 			case 1: //case1은 reverse 케이스 밖에 없음
@@ -1705,6 +1679,13 @@ $(function(){
 		var nowScroll = $(window).scrollTop();
 		var storyArea_pos = $(".storytelling-area").offset().top,
 			storyArea_end_pos = $(".storytelling-area").offset().top + $(".storytelling-area").height()-screenHeight;
+
+        $(".hideme").each(function(i){
+			if( $(this).hasClass("shown") == false && nowScroll + screenHeight > $(this).offset().top + $(this).outerHeight()*0.5 ){
+				$(this).addClass("shown")
+				$(this).stop().animate({"opacity":"1"},1000);
+			}
+		});
 
 		if( nowScroll >= storyArea_pos && nowScroll < storyArea_end_pos ){
 			if(!nowStoryMode){
